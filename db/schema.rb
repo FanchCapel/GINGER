@@ -10,10 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_143938) do
+ActiveRecord::Schema.define(version: 2019_11_25_152655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.integer "duration"
+    t.string "city"
+    t.string "meeting_point"
+    t.text "description"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "CHF", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "experience_slices", force: :cascade do |t|
+    t.bigint "activity_id"
+    t.bigint "experience_id"
+    t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_experience_slices_on_activity_id"
+    t.index ["experience_id"], name: "index_experience_slices_on_experience_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "budget_cents", default: 0, null: false
+    t.string "budget_currency", default: "CHF", null: false
+    t.string "city"
+    t.date "date"
+    t.string "time_slot"
+    t.datetime "paid_at"
+    t.datetime "prepared_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
+  create_table "message_types", force: :cascade do |t|
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "content"
+    t.datetime "send_at"
+    t.bigint "message_type_id"
+    t.bigint "experience_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_messages_on_experience_id"
+    t.index ["message_type_id"], name: "index_messages_on_message_type_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +78,20 @@ ActiveRecord::Schema.define(version: 2019_11_25_143938) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "primary_number"
+    t.string "secondary_number"
+    t.string "primary_first_name"
+    t.string "primary_last_name"
+    t.string "secondary_first_name"
+    t.string "secondary_last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "experience_slices", "activities"
+  add_foreign_key "experience_slices", "experiences"
+  add_foreign_key "experiences", "users"
+  add_foreign_key "messages", "experiences"
+  add_foreign_key "messages", "message_types"
+  add_foreign_key "messages", "users"
 end
