@@ -1,3 +1,11 @@
 <div class="container">
   <h2>Create Experience</h2>
+
+  <%= simple_form_for [@experience, @experience_slice] do |f| %>
+      <%= f.input :activity, collection: Activity.all, label: "activity_1", input_html: { name: 'experience_slice[activity_1]' } %>
+      <%= f.input :activity, collection: Activity.all, label: "activity_2", input_html: { name: 'experience_slice[activity_2]' } %>
+      <%= f.input :activity, collection: Activity.all, label: "activity_3", input_html: { name: 'experience_slice[activity_3]' } %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+
 </div>
