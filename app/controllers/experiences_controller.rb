@@ -12,14 +12,17 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    @experience = Experience.new(experience_params)
-    @experience.user = current_user
-    if @experience.save
-      redirect_to experience_path(@experience)
+    if current_user == nil
+      redirect_to new_user_session_path(@experience)
     else
-      render 'new'
+      @experience = Experience.new(experience_params)
+      @experience.user = current_user
+      if @experience.save
+        redirect_to new_user_session_path(@experience)
+      else
+        render 'new'
+      end
     end
-
     # authorize @experience
   end
 
@@ -34,6 +37,6 @@ class ExperiencesController < ApplicationController
   private
 
   def experience_params
-    params.require(:experience).permit(:user, :budget, :city, :date, :time_slot)
+    params.require(:experience).permit(:user, :budget_cents, :city, :date, :time_slot)
   end
 end
