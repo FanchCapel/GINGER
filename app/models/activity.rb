@@ -3,7 +3,6 @@ class Activity < ApplicationRecord
   monetize :price_cents
 
   # Associations
-  belongs_to :experience_slice
 
   # Validations
   validates :name, presence: true
