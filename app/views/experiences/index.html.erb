@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Experience Designer</h2>
+  <table style="width:100%">
+    <tr>
+      <th>Activity 1</th>
+      <th>Activity 2</th>
+      <th>Activity 3</th>
+      <th>Prepared ?</th>
+      <th>Paid ?</th>
+      <th>Actions</th>
+    </tr>
+    <% @experiences.each do |experience| %>
+      <tr>
+        <% if experience.experience_slices.count > 0 %>
+          <% experience.experience_slices.each do |experience_slice| %>
+             <td><%= experience_slice.activity.name %></td>
+          <% end %>
+        <% else %>
+          <td>Empty</td>
+          <td>Empty</td>
+          <td>Empty</td>
+        <% end %>
+        <% if experience.prepared_at.nil? %>
+          <td>Not prepared</td>
+        <% else %>
+          <td><%= experience.prepared_at %></td>
+        <% end %>
+        <% if experience.paid_at.nil? %>
+          <td>Not paid</td>
+        <% else %>
+          <td><%= experience.paid_at %></td>
+        <% end %>
+        <% if experience.prepared_at.nil? %>
+          <td><%= link_to "Prepare", new_experience_experience_slice_path(experience) %></td>
+        <% else %>
+          <td><%= link_to "Prepare", new_experience_experience_slice_path(experience), class: "disabled" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
