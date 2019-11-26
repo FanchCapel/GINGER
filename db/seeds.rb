@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+require 'faker'
+
+puts "Deleting activities..."
+Activity.destroy_all
+puts "Re creating activities..."
+
+file = File.dirname(__FILE__)
+
+file_path = file + "/seeds.csv"
+csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
+
+CSV.foreach(file_path, csv_options) do |row|
+  activity = Activity.new({
+    name: row["Company name"],
+    description: Faker::Lorem.paragraphs,
+    meeting_point: Faker::Address.full_address,
+    duration: Faker::Number.within(range: 6..12) * 10,
+    city: ["Lausanne", "Geneva", "Fribourg", "Sion", "Neuchatel"].sample,
+    price: Faker::Number.within(range: 5..15) * 10
+  })
+  activity.save!
+end
+
+puts "Done..."
