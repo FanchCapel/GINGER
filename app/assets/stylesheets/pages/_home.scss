@@ -29,7 +29,7 @@ p {
 }
 
 .banner {
-  background-image: url("drinks.png");
+  background-image: asset-url('drinks.png');
   height: 100vh;
   position: relative;
   background-attachment: fixed;
