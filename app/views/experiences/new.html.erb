@@ -1,11 +1,17 @@
-<h1 class="form_title">Laissez nous vous préparer l'expérience parfaite</h1>
 
-<div class="form col-4 margin-left col-1">
-  <%= simple_form_for @experience do |f| %>
-    <%= f.input :city %>
-    <%= f.input :date %>
-    <%= f.input :time_slot, as: :radio_buttons, collection: ['en journée', 'en soirée']%>
-    <%= f.input :budget_cents, collection: [150, 200, 250, 300, 350, 400, 450, 500]%>
-    <%= f.button :submit %>
-  <% end %>
+
+<div class="banner-exp">
+  <%= image_tag "logo.png", :class => "logo"%>
+  <h1 class="form_title">Laissez nous vous préparer l'expérience parfaite</h1>
+
+  <div class="form col-4 margin-left col-1">
+    <%= simple_form_for @experience do |f| %>
+      <%= f.input :city, label: 'La ville de votre expérience?'%>
+      <%= f.input :date %>
+      <%= f.input :time_slot, label: 'A quel moment de la journée?', as: :radio_buttons, collection: ['en journée', 'en soirée']%>
+      <%= f.input :budget_cents, label: 'Votre budget', collection: [150, 200, 250, 300, 350, 400, 450, 500]%>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+
 </div>
