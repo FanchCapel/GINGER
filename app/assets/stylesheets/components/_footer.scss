@@ -1,20 +1,22 @@
 // footer style
 
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 40px;
   color: white;
   text-align: center;
   background: #2F2E2B;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
+
 .footer-links {
   display: flex;
   align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .footer-links a {
   color: $ginger;
