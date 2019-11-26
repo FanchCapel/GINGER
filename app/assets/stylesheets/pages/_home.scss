@@ -1,1 +1,103 @@
-// Specific CSS for your home-page
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:700');
+
+/* Fontawesome */
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+/* Utilities */
+body {
+  margin: 0;
+  font-family: Open Sans;
+  background-color: #2F2E2B;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+}
+
+h1 {
+  font-size: 50px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 25px;
+}
+
+.banner {
+  background-image: url("drinks.png");
+  height: 100vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.banner .logo {
+  width: 400px;
+  position: absolute;
+  bottom: -40px;
+  left: calc(50vw - 200px);
+}
+
+.container {
+  position: absolute;
+  top: 15vh;
+  left: 5vw;
+  color: white;
+}
+
+.container p {
+  margin-bottom: 50px;
+}
+
+.btn {
+  margin-top: 100px;
+  border: solid;
+  border-width: 1px;
+  border-color: $ginger;
+  color: $ginger;
+  border-radius: 30px;
+  opacity: 0.6;
+  padding: 16px;
+
+}
+
+.btn:hover {
+  color: white;
+  border-color: white;
+}
+
+.choose h2{
+  color: white;
+  margin-left: 10vw;
+  margin-top: 20px;
+}
+
+.cards {
+  color: black;
+  font-size: 15px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+
+}
+.card {
+  width: 200px;
+}
+
+.images {
+  width: 200px;
+}
+
+.card p {
+  color: white;
+  font-size: 12px;
+
+}
