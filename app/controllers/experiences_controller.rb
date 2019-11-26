@@ -34,6 +34,6 @@ class ExperiencesController < ApplicationController
   private
 
   def experience_params
-    params.require(:experience_slice).permit(:user, :budget, :city, :date, :time_slot)
+    params.require(:experience).permit(:user, :budget, :city, :date, :time_slot)
   end
 end
