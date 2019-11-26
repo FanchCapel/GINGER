@@ -7,11 +7,20 @@ class ExperiencesController < ApplicationController
   end
 
   def new
-
+    @experience = Experience.new
+    # authorize @experience
   end
 
   def create
+    @experience = Experience.new(experience_params)
+    @experience.user = current_user
+    if @experience.save
+      redirect_to experience_path(@experience)
+    else
+      render 'new'
+    end
 
+    # authorize @experience
   end
 
   def edit
