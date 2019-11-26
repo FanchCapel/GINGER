@@ -1,3 +1,11 @@
+
+//push the footer to the bottom of the page
+
+.site-container {
+  min-height: calc(100vh - 110px);
+
+// footer style
+}
 .footer {
   background: #F4F4F4;
   display: flex;
@@ -25,6 +33,4 @@
   color: #D23333;
 }
 
-.site-container {
-  min-height: calc(100vh - 110px);
-}
+
