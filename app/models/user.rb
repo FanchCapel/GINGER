@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :messages
 
   # Validations
-  validates :primary_number, presence: true
-  validates :primary_first_name, presence: true
-  validates :primary_last_name, presence: true
+  # validates :primary_number, presence: true
+  # validates :primary_first_name, presence: true
+  # validates :primary_last_name, presence: true
 end
