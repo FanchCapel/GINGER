@@ -64,7 +64,6 @@ p {
   border-color: $ginger;
   color: $ginger;
   border-radius: 30px;
-  opacity: 0.6;
   padding: 16px;
 
 }
@@ -81,23 +80,30 @@ p {
 }
 
 .cards {
-  color: black;
+  color: $ginger;
   font-size: 15px;
   margin-top: 100px;
   display: flex;
   justify-content: space-around;
+  text-align: center;
 
 }
 .card {
-  width: 200px;
+  width: 300px;
+  background-color: #2F2E2B;
+  border-color: #2F2E2B;
 }
 
 .images {
   width: 200px;
+  margin: auto;
+  margin-bottom: 50pX;
+
 }
 
 .card p {
-  color: white;
-  font-size: 12px;
+  color: #E1DCD5;
+  font-size: 15px;
+  text-align: center;
 
 }

@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #2F2E2B;
   height: 50px;
 }
 
@@ -8,6 +8,16 @@
   flex-grow: 0;
 }
 
+.nav-link {
+  color: white;
+  // color: #E1DCD5;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-text {
+color: white;
+
 }
