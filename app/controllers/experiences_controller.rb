@@ -1,6 +1,9 @@
 class ExperiencesController < ApplicationController
-  def index
 
+  skip_before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update]
+
+  def index
+    @experiences = Experience.all
   end
 
   def new

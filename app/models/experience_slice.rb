@@ -9,5 +9,4 @@ class ExperienceSlice < ApplicationRecord
   validates :experience, presence: true
   validates :order, presence: true
   validates :experience, uniqueness: { scope: :activity }
-
 end
