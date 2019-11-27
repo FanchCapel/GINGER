@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'money-rails'
 gem 'faker'
 gem 'stripe_event'
+gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

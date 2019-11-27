@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_152655) do
+ActiveRecord::Schema.define(version: 2019_11_27_082959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_152655) do
     t.datetime "prepared_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "checkout_session_id"
     t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 

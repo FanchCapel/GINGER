@@ -226,6 +226,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe_event
+  stripe
   uglifier
   web-console (>= 3.3.0)
   webpacker
