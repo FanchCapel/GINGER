@@ -1,11 +1,11 @@
 <div class="container">
-  <h2>Create Experience</h2>
+  <h2>Créer l'Experience</h2>
 
-  <%= simple_form_for [@experience, @experience_slice] do |f| %>
-      <%= f.input :activity, collection: Activity.all, label: "activity_1", input_html: { name: 'experience_slice[activity_1]' } %>
-      <%= f.input :activity, collection: Activity.all, label: "activity_2", input_html: { name: 'experience_slice[activity_2]' } %>
-      <%= f.input :activity, collection: Activity.all, label: "activity_3", input_html: { name: 'experience_slice[activity_3]' } %>
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
+  <p>Monsieur et Madame <%= @experience.user.primary_last_name.capitalize %> ont un budget de <%= humanized_money @experience.budget_cents %> CHF. Ils souhaitent sortir sur <%= @experience.city %>, le <%= @experience.date.to_date %> <%= @experience.time_slot %></p>
 
+  <%= render 'shared/exp_design_form' %>
+
+  <p>Budget: <%= humanized_money_with_symbol @experience.budget_cents %> </p>
+  <p>Prix total: <span id="prix">0</span> CHF</p>
+  <p>Durée totale: <span id="duration">0</span></p>
 </div>
