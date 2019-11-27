@@ -17,7 +17,11 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'money-rails'
 gem 'faker'
+gem 'stripe_event'
 gem 'stripe'
+gem 'nexmo'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
