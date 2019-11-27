@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'messages/create'
   devise_for :users
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   root to: 'pages#home'
