@@ -21,6 +21,8 @@ gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development, :test do
