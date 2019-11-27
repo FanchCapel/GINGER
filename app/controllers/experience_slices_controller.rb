@@ -1,44 +1,41 @@
 class ExperienceSlicesController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_experience
 
   def new
     @activities = Activity.all
-    @experience = Experience.find(params[:experience_id])
     @experience_slice = ExperienceSlice.new
   end
 
   def create
-    @experience = Experience.find(params[:experience_id])
+    params[:experience_slice].values.each_with_index do |activity_id, index|
+      experience_slice = ExperienceSlice.new(
+        activity_id: activity_id,
+        experience: @experience,
+        order: index + 1
+      )
+      experience_slice.save
+    end
+    @experience.update(prepared_at: Time.now)
+  end
 
-    experience_slice_1 = ExperienceSlice.new(
-      activity_id: params[:experience_slice][:activity_1],
-      experience: @experience,
-      order: 1
-    )
-    experience_slice_1.save
-    experience_slice_2 = ExperienceSlice.new(
-      activity_id: params[:experience_slice][:activity_2],
-      experience: @experience,
-      order: 2
-    )
-    experience_slice_2.save
-    experience_slice_3 = ExperienceSlice.new(
-      activity_id: params[:experience_slice][:activity_3],
-      experience: @experience,
-      order: 3
-    )
-    experience_slice_3.save
+  def edit
+  end
 
-    @experience.prepared_at = Time.now
-    @experience.save
+  def update
+  end
 
-    redirect_to experiences_path
+  def show
   end
 
   private
 
   def experience_slice_params
     params.require(:experience_slice).permit(:activity, :experience, :order)
+  end
+
+  def set_experience
+    @experience = Experience.find(params[:experience_id])
   end
 end

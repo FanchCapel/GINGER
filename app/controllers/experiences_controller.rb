@@ -3,7 +3,7 @@ class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update]
 
   def index
-    @experiences = Experience.all
+    @experiences = Experience.all.sort_by{ |experience| experience.id }
   end
 
   def new
@@ -37,7 +37,6 @@ class ExperiencesController < ApplicationController
       end
     end
     # authorize @experience
-
   end
 
   def edit

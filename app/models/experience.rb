@@ -7,6 +7,6 @@ class Experience < ApplicationRecord
 
   belongs_to :user
 
-  has_many :experience_slices
+  has_many :experience_slices, dependent: :destroy
   has_many :messages
 end
