@@ -4,8 +4,8 @@ class RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     if cookies[:experience].present?
       experience = JSON.parse cookies[:experience]
-      id = Experience.create(experience)
       cookies.delete :experience
+      Experience.create(experience)
     end
   end
 end
