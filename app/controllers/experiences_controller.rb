@@ -1,5 +1,4 @@
 class ExperiencesController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update]
 
   def index
@@ -13,7 +12,8 @@ class ExperiencesController < ApplicationController
 
   def create
     if current_user.nil?
-      redirect_to new_user_session_path(@experience)
+      cookies[:experience] = { value: experience_params.to_json, expires: 5.minutes }
+      redirect_to new_user_registration_path
     else
       @experience = Experience.new(experience_params)
       @experience.user = current_user
