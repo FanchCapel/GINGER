@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+      <h1>Experience #<%= @experience.id %></h1>
+      <ul class="list-unstyled">
+        <li><strong>ISSUED ON</strong> <%= @experience.created_at.to_date %></li>
+        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @experience.budget_cents %></li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -12,18 +12,32 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    if current_user == nil
+    if current_user.nil?
       redirect_to new_user_session_path(@experience)
     else
       @experience = Experience.new(experience_params)
       @experience.user = current_user
       if @experience.save
-        redirect_to new_user_session_path(@experience)
+        session = Stripe::Checkout::Session.create(
+          payment_method_types: ['card'],
+          line_items: [{
+            name: "My date",
+            amount: @experience.budget_cents * 100,
+            currency: 'chf',
+            quantity: 1
+          }],
+          success_url: experience_url(@experience),
+          cancel_url: experience_url(@experience)
+        )
+
+        @experience.update(checkout_session_id: session.id)
+        redirect_to new_experience_payment_path(@experience)
       else
-        render 'new'
+        render :new
       end
     end
     # authorize @experience
+
   end
 
   def edit
@@ -32,6 +46,10 @@ class ExperiencesController < ApplicationController
 
   def update
 
+  end
+
+  def show
+    @experience = current_user.experiences.find(params[:id])
   end
 
   private
