@@ -13,9 +13,7 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <!-- set the content in a flexbox and allow to push the footer to the bottom -->
-    <div class="site-container">
       <%= yield %>
-    </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
