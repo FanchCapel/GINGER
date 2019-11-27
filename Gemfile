@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'money-rails'
 gem 'faker'
+gem 'stripe_event'
 gem 'stripe'
 
 group :development do
