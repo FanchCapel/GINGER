@@ -10,6 +10,8 @@ class RegistrationsController < Devise::RegistrationsController
       if experience.save
         experience_path(experience)
       end
+    else
+      new_experience_path
     end
   end
 end
