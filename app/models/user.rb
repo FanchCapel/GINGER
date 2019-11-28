@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   # Associations
   has_many :experiences
-  has_many :messages
 
   # Validations
   # validates :primary_number, presence: true
