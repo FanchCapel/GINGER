@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_11_28_152921) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,11 +73,12 @@ ActiveRecord::Schema.define(version: 2019_11_28_152921) do
   end
 
   create_table "message_types", force: :cascade do |t|
-    t.string "type"
+    t.string "message_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "send_at"
     t.integer "day"
+    t.text "content"
   end
 
   create_table "messages", force: :cascade do |t|
