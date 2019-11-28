@@ -1,8 +1,10 @@
 require 'csv'
 require 'faker'
 
+CATEGORIES = ['Food', 'Sport', 'Cultural', 'Social', 'Educational']
 
 puts "Deleting activities..."
+Experience.destroy_all
 Activity.destroy_all
 puts "Re creating activities..."
 
@@ -23,4 +25,9 @@ CSV.foreach(file_path, csv_options) do |row|
   activity.save!
 end
 
+puts "Creating categories"
+
+CATEGORIES.each do |category|
+  Category.create!(name: category)
+end
 puts "Done..."
