@@ -1,6 +1,7 @@
 require 'csv'
 require 'faker'
 
+
 puts "Deleting activities..."
 Activity.destroy_all
 puts "Re creating activities..."
