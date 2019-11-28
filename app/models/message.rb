@@ -11,11 +11,11 @@ class Message < ApplicationRecord
   validates :message_type, presence: true
   validates :experience, presence: true
 
-  after_create :plan_message
+  # after_create :plan_message
 
-  private
+  # private
 
-  def plan_message
-    MessageJob.set(wait_until: Date.tomorrow.noon).perform_later(message_id)
-  end
+  # def plan_message
+  #   MessageJob.set(wait_until: Date.tomorrow.noon).perform_later(message_id)
+  # end
 end
