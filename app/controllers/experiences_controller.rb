@@ -1,7 +1,8 @@
 class ExperiencesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
+    redirect_to root_path, warning: "You are not authorized to access this page!" unless current_user.admin?
     @experiences = Experience.all.sort_by{ |experience| experience.id }
   end
 
