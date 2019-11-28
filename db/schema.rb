@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_144948) do
+ActiveRecord::Schema.define(version: 2019_11_28_150118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2019_11_28_144948) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "experience_preferences_categories", force: :cascade do |t|
+    t.bigint "experience_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_experience_preferences_categories_on_category_id"
+    t.index ["experience_id"], name: "index_experience_preferences_categories_on_experience_id"
   end
 
   create_table "experience_slices", force: :cascade do |t|
@@ -97,6 +106,8 @@ ActiveRecord::Schema.define(version: 2019_11_28_144948) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "experience_preferences_categories", "categories"
+  add_foreign_key "experience_preferences_categories", "experiences"
   add_foreign_key "experience_slices", "activities"
   add_foreign_key "experience_slices", "experiences"
   add_foreign_key "experiences", "users"
