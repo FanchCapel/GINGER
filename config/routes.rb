@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :experiences, only: [:index, :new, :create, :edit, :update, :show] do
     resources :experience_slices, only: [:new, :create, :edit, :update]
     resources :payments, only: :new
+    resources :experience_preferences_categories, only: [:new, :create]
   end
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
