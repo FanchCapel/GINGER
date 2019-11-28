@@ -11,4 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "experience_slices/new"
+@import "experience_slices/new";
+
+// Main application CSS
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - #{$navbarHeight} - #{$footerHeight});
+}
