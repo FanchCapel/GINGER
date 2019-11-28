@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_082959) do
+ActiveRecord::Schema.define(version: 2019_11_28_105609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 2019_11_27_082959) do
     t.string "price_currency", default: "CHF", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "teasing1"
+    t.text "teasing2"
+    t.text "instruction"
   end
 
   create_table "experience_slices", force: :cascade do |t|
@@ -56,19 +59,17 @@ ActiveRecord::Schema.define(version: 2019_11_27_082959) do
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "send_at"
+    t.integer "day"
   end
 
   create_table "messages", force: :cascade do |t|
-    t.bigint "user_id"
-    t.text "content"
-    t.datetime "send_at"
     t.bigint "message_type_id"
     t.bigint "experience_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["experience_id"], name: "index_messages_on_experience_id"
     t.index ["message_type_id"], name: "index_messages_on_message_type_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,5 +95,4 @@ ActiveRecord::Schema.define(version: 2019_11_27_082959) do
   add_foreign_key "experiences", "users"
   add_foreign_key "messages", "experiences"
   add_foreign_key "messages", "message_types"
-  add_foreign_key "messages", "users"
 end
