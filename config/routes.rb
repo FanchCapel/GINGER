@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :activities, only: [] do
     collection do
-      post 'calculate_price', to: 'activities#calculate_price'
+      post 'calculate_experience', to: 'activities#calculate_experience'
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

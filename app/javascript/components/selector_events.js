@@ -6,23 +6,21 @@ export const selectorEvents = () => {
 }
 
 export const priceUpdate = (e) => {
-  const prix = document.querySelector('#prix');
-  const activities = document.querySelectorAll('.act');
   const activity_ids = [];
-  activities.forEach((activity) => {
+  document.querySelectorAll('.act').forEach((activity) => {
     if (activity.value !== "") {
       activity_ids.push(activity.value);
     }
   });
-  console.log(activity_ids);
-  fetch(`/activities/calculate_price`, {
+  fetch('/activities/calculate_experience', {
     method: "POST",
     headers: { 'X-CSRF-Token': document.querySelector("input[name='authenticity_token']").value, 'Content-type': "application/json" },
     body: JSON.stringify({ activity_ids: activity_ids })
   })
   .then(response => response.json())
   .then((data) => {
-    prix.innerHTML = data["amount"]
+    document.querySelector('#prix').innerHTML = data["amount"]
+    document.querySelector('#duration').innerText = `${Math.floor(data["duration"] / 60)} h ${data["duration"] % 60} min`
   });
 }
 
