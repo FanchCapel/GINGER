@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #2F2E2B;
-  height: $navbarHeight;
+  background:      #2F2E2B;
+  height:          $navbarHeight;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -23,5 +23,12 @@ color: white;
 }
 
 #navbarDropdownMenuLink-333 {
+  color: $ginger;
+  :hover {
+    color: white;
+  }
+}
+
+#login {
   color: $ginger;
 }
