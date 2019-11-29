@@ -1,0 +1,5 @@
+const showCategories = (formHTML) => {
+  const form = document.getElementById('preferences-form');
+  form.insertAdjacentHTML('beforeend', formHTML);
+}
+showCategories('<%= j render "shared/experience_preferences_categories_form", experience: @experience, experience_preferences_category: @experience_preferences_category %>');
