@@ -13,6 +13,10 @@ class Message < ApplicationRecord
   private
 
   def plan_message
-    # MessageJob.set(wait_until: Date.tomorrow.noon).perform_later(message_id)
+    send_date = (self.experience.date + self.message_type.day).beginning_of_day
+    send_date = send_date + self.message_type.send_at.hour.hours
+    message = self
+    p eval message_type.content
+    MessageJob.set(wait_until: send_date).perform_later(self.id)
   end
 end
