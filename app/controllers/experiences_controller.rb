@@ -48,6 +48,16 @@ class ExperiencesController < ApplicationController
 
   end
 
+  def preferences_form
+    @experience = Experience.find(params[:experience_preferences_category][:experience])
+    @experience_preferences_category = ExperiencePreferencesCategory.new
+    @categories = Category.all
+    respond_to do |format|
+      # format.html { redirect_to root_path }
+      format.js
+    end
+  end
+
   def show
     @experience = current_user.experiences.find(params[:id])
   end

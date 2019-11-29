@@ -16,6 +16,7 @@ class ExperiencePreferencesCategoriesController < ApplicationController
         experience: @experience,
         category_id: category_id
       )
+      # @experience.update(preference_level: params[:slider])
     end
     redirect_to root_path
   end

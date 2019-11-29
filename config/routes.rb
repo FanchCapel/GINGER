@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resources :payments, only: :new
     resources :experience_preferences_categories, only: [:new, :create]
   end
+
+  post 'experience_preferences_form', to: 'experiences#preferences_form'
+
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'
