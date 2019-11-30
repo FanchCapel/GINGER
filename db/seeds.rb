@@ -83,7 +83,9 @@ puts "Creating experiences slices..."
     ExperienceSlice.create!(experience: experience, activity: activities[1], order: 2)
     ExperienceSlice.create!(experience: experience, activity: activities[2], order: 3)
     experience.update!(prepared_at: Time.zone.today + Faker::Number.within(range: 10..30).day)
-    experience.update!(paid_at: Time.zone.today + Faker::Number.within(range: 10..30).day)
+    if [0, 1].sample === 1
+      experience.update!(paid_at: Time.zone.today + Faker::Number.within(range: 10..30).day)
+    end
   end
 end
 puts "Done"
