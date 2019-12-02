@@ -1,19 +1,31 @@
+
 <div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Resumé de votre experience</h1>
-      <p>Organisation de <strong><%= "Mon Date" %></strong> pour un budget total de <strong><%= humanized_money_with_symbol @experience.budget_cents %></strong></p>
-      <button id="pay" class="btn btn-primary">Payer</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @experience.checkout_session_id %>'
-          });
-        });
-      </script>
+  <div class="d-flex justify-content-between">
+    <div class="ginger-text">
+      <p>Monsieur et Madame <%= @experience.user.primary_last_name %>, nous avons pris note de votre demande.
+        Afin de confirmer votre expérience Ginger le <br> <str><%=
+      @experience.date.strftime("%m/%d/%Y") %> <%= @experience.time_slot == "en
+      soirée" ? "soirée" : "après-midi" %><str>, <br> nous vous laissons le soin de valider votre paiement.
+     <br> Votre Majordome Ginger <br>
+   </p>
+      <div class="pay-btn">
+        <button id="pay" class="btn-g" style="width: 30%">Payer</button>
+      </div>
+    </div>
+    <div class="ginger-img">
+      <%= image_tag "ginger_hipster.png" %>
     </div>
   </div>
 </div>
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const paymentButton = document.getElementById('pay');
+  paymentButton.addEventListener('click', () => {
+    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+    stripe.redirectToCheckout({
+      sessionId: '<%= @experience.checkout_session_id %>'
+    });
+  });
+</script>
