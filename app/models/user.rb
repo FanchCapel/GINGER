@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :experiences
 
   # Validations
-  # validates :primary_number, presence: true, format: { with: /07\d{8}/ }, on: :create
+  validates :primary_number, presence: true, format: { with: /07\d{8}/ }
+  # on: :create
   # validates :secondary_number,
   # validates :primary_first_name, presence: true
   # validates :primary_last_name, presence: true
