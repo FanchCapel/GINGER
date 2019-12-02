@@ -1,12 +1,10 @@
 <div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Experience #<%= @experience.id %></h1>
-      <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @experience.created_at.to_date %></li>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @experience.budget_cents %></li>
-        </li>
-      </ul>
+  <div class="d-flex justify-content-between">
+    <div class="ginger-text">
+      <p>Monsieur et Madame <%= @experience.user.primary_last_name %>, les preparatifs sont en cours pour votre <%= @experience.time_slot == "en soirée" ? "soirée" : "après-midi" %> du <%= @experience.date.strftime("%m/%d/%Y") %>. Je m'occupe de tout et je vous envoie un petit texto dès que j'ai fini de tout organiser. <br>A bientot,<br>Votre Majordome Ginger</p>
+    </div>
+    <div class="ginger-img">
+      <%= image_tag "ginger_hipster.png" %>
     </div>
   </div>
 </div>
