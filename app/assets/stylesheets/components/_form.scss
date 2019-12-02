@@ -1,3 +1,7 @@
+.form-height {
+  min-height: calc(100vh - #{$navbarHeight})
+}
+
 .form_title {
   margin-left: 15px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -70,3 +74,4 @@ form:before {
   width:      100%;
   text-align: right;
 }
+
