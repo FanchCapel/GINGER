@@ -1,9 +1,9 @@
 class MessagesController < ApplicationController
 
-  def create
-    MessageJob.set(wait_until: Date.tomorrow.noon).perform_later(message_id)
-  end
-
+  # def create
+  #   MessageJob.set.perform_later(message_id)
+  # end
+# (wait_until: Date.tomorrow.noon)
   private
 
   def message_params

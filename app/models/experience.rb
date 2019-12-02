@@ -10,7 +10,7 @@ class Experience < ApplicationRecord
   has_many :experience_slices, dependent: :destroy
   has_many :messages
 
-  def generate_message
+  def generate_messages
     MessageType.all.each do |message_type|
       self.messages << Message.new(message_type: message_type)
     end
