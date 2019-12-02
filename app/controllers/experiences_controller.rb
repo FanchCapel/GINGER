@@ -4,6 +4,7 @@ class ExperiencesController < ApplicationController
   def index
     redirect_to root_path, warning: "You are not authorized to access this page!" unless current_user.admin?
     @experiences = Experience.all.sort_by{ |experience| experience.id }
+    @experience_slices = ExperienceSlice.all
   end
 
   def new
