@@ -34,6 +34,11 @@ puts "Done"
 
 # ---------------------- CREATE -----------------------------------
 
+puts "Creating categories..."
+CATEGORIES.each do |category|
+  Category.create!(name: category)
+end
+puts "Done"
 
 puts "Creating activities..."
 file_path = File.dirname(__FILE__) + "/seeds.csv"
@@ -46,16 +51,12 @@ CSV.foreach(file_path, csv_options) do |row|
     meeting_point: Faker::Address.full_address,
     duration: Faker::Number.within(range: 6..12) * 10,
     city: CITIES.sample,
-    price: Faker::Number.within(range: 5..15) * 10
+    price: Faker::Number.within(range: 5..15) * 10,
+    category: Category.all.sample
   })
 end
 puts "Done"
 
-puts "Creating categories..."
-CATEGORIES.each do |category|
-  Category.create!(name: category)
-end
-puts "Done"
 
 puts "Creating users..."
 User.create!(email:"alain.fresco@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0796666666',secondary_number: '0791234567', primary_first_name: "Alain", primary_last_name: "Fresco")
@@ -66,6 +67,7 @@ User.create!(email:"clara.leroux@gmail.com",password:"123456",password_confirmat
 User.create!(email:"thibault.jaime@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0792222222',secondary_number: '0791234567', primary_first_name: "Thibault", primary_last_name: "Jaime")
 User.create!(email:"nicholas.hendrickson@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0793333333',secondary_number: '0791234567', primary_first_name: "Nicholas", primary_last_name: "Hendrickson")
 User.create!(email:"alessandro.bucarelli@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0794444444',secondary_number: '0791234567', primary_first_name: "Alessandro", primary_last_name: "Bucarelli")
+User.create!(email:"cecile.colombo@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0798888888',secondary_number: '0791234567', primary_first_name: "Cecile", primary_last_name: "Colombo")
 puts "Done"
 
 puts "Creating experiences..."

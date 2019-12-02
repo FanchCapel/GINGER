@@ -6,6 +6,7 @@ class ExperienceSlicesController < ApplicationController
   def new
     redirect_to root_path, warning: "You are not authorized to access this page!" unless current_user.admin?
     @activities = Activity.all
+    @categories = Category.all
     @experience_slice = ExperienceSlice.new
   end
 
