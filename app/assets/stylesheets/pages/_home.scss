@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-family: Open Sans;
-  background-color: #2F2E2B;
+  background-color: $background-color;
 }
 
 h1, h2, h3, h4 {
@@ -46,31 +46,33 @@ p {
   left: calc(50vw - 200px);
 }
 
-.container {
+.container-g {
   position: absolute;
-  top: 15vh;
+  top: 25vh;
   left: 5vw;
   color: white;
 }
 
-.container p {
+.container-g p {
   margin-bottom: 50px;
 }
 
-.btn {
-  margin-top: 15px;
+.btn-g {
+  margin: 0 auto;
   border: solid;
   border-width: 1px;
   border-color: $ginger;
   color: $ginger;
   border-radius: 30px;
-  padding: 16px;
+  padding: 10px;
+  width: 100%;
 
 }
 
-.btn:hover {
+.btn-g:hover {
   color: white;
   border-color: white;
+  text-decoration: none;
 }
 
 .choose h2{
@@ -106,4 +108,8 @@ p {
   font-size: 15px;
   text-align: center;
 
+}
+
+.form-boxes {
+  margin-right: 0px;
 }

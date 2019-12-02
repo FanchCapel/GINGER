@@ -13,6 +13,8 @@
       <%= f.input :primary_number,
                   label: 'Phone Number',
                   required: true,
+                  # hint: "Votre numero doit se présenter comme suit: 0712345678",
+                  # input_html: { value: '/07\d{8}/' },
                   autofocus: true %>
       <%= f.input :primary_first_name,
                   label: 'First Name',
