@@ -1,5 +1,4 @@
 class ExperienceSlicesController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:new, :create]
   before_action :set_experience
 
@@ -21,6 +20,7 @@ class ExperienceSlicesController < ApplicationController
       )
     end
     @experience.update(prepared_at: Time.now)
+    @experience.generate_messages
     redirect_to experiences_path
   end
 
