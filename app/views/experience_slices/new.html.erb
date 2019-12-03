@@ -17,14 +17,19 @@
       <%= render 'shared/exp_design_form_2' %>
     </div>
     <div class="selections col-lg-6">
-      <div class="tab mb-1">
+      <div class="tab">
         <% @categories.each do |category| %>
-          <button class="tablinks <%= 'active' if category.name == 'Food' %>" id="<%= category.name %>"><%= category.name %></button>
+          <button class="category tablinks <%= 'active' if category.name == 'Food' %>" id="<%= category.name %>"><%= category.name %></button>
+        <% end %>
+      </div>
+      <div class="tab mb-1">
+        <% @cities.each do |city| %>
+          <button class="city tablinks <%= 'active' if city == @experience.city %>" id="<%= city %>"><%= city %></button>
         <% end %>
       </div>
       <div class="sortable-activities" dropzone="move" id="content-list" style="color:black">
         <% @activities.each do |activity| %>
-          <div class="draggable tabcontent content-wrapper <%= activity.category.name %> <%= 'default' if activity.category.name == 'Food' %>" draggable="true" name='<%= "activity-#{activity.id}" %>' value=<%= activity.id %>>
+          <div class="draggable tabcontent content-wrapper <%= activity.category.name %> <%= activity.city %><%= ' default' if activity.category.name == 'Food' && activity.city == @experience.city %>" draggable="true" name='<%= "activity-#{activity.id}" %>' value=<%= activity.id %>>
             <div class="activity-info">
               <div class="activity-name">
                 <strong><%= activity.name %></strong>
