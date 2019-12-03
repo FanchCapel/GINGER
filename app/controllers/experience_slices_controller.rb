@@ -11,13 +11,14 @@ class ExperienceSlicesController < ApplicationController
   end
 
   def create
-    params[:experience_slice].values.each_with_index do |activity_id, index|
-      experience_slice = ExperienceSlice.new(
-        activity_id: activity_id,
+    i = 0
+    params.select { |key| key =~ /activity-\d-id/ }.each do |_key, activity_id|
+      i += 1
+      ExperienceSlice.create(
+        activity_id: activity_id.to_i,
         experience: @experience,
-        order: index + 1
+        order: i
       )
-      experience_slice.save
     end
     @experience.update(prepared_at: Time.now)
     redirect_to experiences_path

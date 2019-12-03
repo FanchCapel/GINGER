@@ -1,0 +1,13 @@
+<%= simple_form_for [@experience, @experience_slice] do |f| %>
+  <div class="d-flex">
+    <div id="rank-list" style="color:black">
+      <div class="pipeline-holder holder-empty dropzone" name="rank-1" dropzone="move" ></div>
+      <input type="hidden" id="rank-1" name="activity-1-id" value="">
+      <div class="pipeline-holder holder-empty dropzone" name="rank-2" dropzone="move" ></div>
+      <input type="hidden" id="rank-1" name="activity-2-id" value="">
+      <div class="pipeline-holder holder-empty dropzone" name="rank-3" dropzone="move" ></div>
+      <input type="hidden" id="rank-1" name="activity-3-id" value="">
+    </div>
+  </div>
+  <%= f.button :submit, class: "btn btn-primary", value: "Finaliser l'experience" %>
+<% end %>
