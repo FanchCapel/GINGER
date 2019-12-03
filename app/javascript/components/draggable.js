@@ -20,9 +20,7 @@ const priceUpdate = (e) => {
 let dragged;
 
 /* events fired on the draggable target */
-document.addEventListener("drag", (event) => {
-
-});
+document.addEventListener("drag", (event) => {});
 
 document.addEventListener("dragstart", (event) => {
   // store a ref. on the dragged elem
@@ -45,7 +43,7 @@ document.addEventListener("dragover", (event) => {
 document.addEventListener("dragenter", (event) => {
   // highlight potential drop target when the draggable element enters it
   if ( event.target.className.includes("dropzone")) {
-    event.target.style.background = "purple";
+    event.target.style.background = "#FEA126";
   }
 });
 
@@ -58,13 +56,28 @@ document.addEventListener("dragleave", (event) => {
 
 document.addEventListener("drop", (event) => {
   event.preventDefault();
-  // move dragged elem to the selected drop target
-  if ( event.target.className.includes("dropzone")) {
+  // copy dragged elem to the selected drop target
+  if (event.target.className.includes("dropzone")) {
     event.target.style.background = "";
-    dragged.parentNode.removeChild( dragged );
-    event.target.appendChild( dragged );
+    event.target.appendChild(dragged.cloneNode(true));
     event.target.nextElementSibling.value = dragged.getAttribute('value');
+    event.target.style.opacity = 1;
+    dragged.style.background = "green";
+    event.target.insertAdjacentHTML("afterbegin", `<a class='boxclose' id=boxclose${dragged.getAttribute('value')}></a>`)
+    removeElement(event.target, dragged);
     priceUpdate(event);
   }
 });
+
+removeElement = (dropTarget, draggedElement) => {
+  boxclose = document.querySelector(`#boxclose${draggedElement.getAttribute('value')}`);
+    boxclose.addEventListener('click', (event) => {
+      event.target.nextElementSibling.remove();
+      draggedElement.style.background = "";
+      dropTarget.nextElementSibling.value = "";
+      event.target.remove();
+      priceUpdate(event);
+    });
+}
+
 
