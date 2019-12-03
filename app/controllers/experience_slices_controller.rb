@@ -6,6 +6,7 @@ class ExperienceSlicesController < ApplicationController
     redirect_to root_path, warning: "You are not authorized to access this page!" unless current_user.admin?
     @activities = Activity.all
     @categories = Category.all
+    @cities = ["Lausanne", "Geneva", "Fribourg", "Sion", "Neuchatel"]
     @experience_slice = ExperienceSlice.new
   end
 
