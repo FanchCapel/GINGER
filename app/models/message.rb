@@ -23,7 +23,7 @@ class Message < ApplicationRecord
 
   # SENDING MESSAGES FOR DEMO
   def plan_message
-    send_date = message_type.day  * 20
+    send_date = message_type.day * 20
     MessageJob.set(wait: send_date.seconds).perform_later(self.id)
   end
 end

@@ -9,6 +9,8 @@ PREF_LEVELS = [1, 2, 3]
 
 # ---------------------- DELETE -----------------------------------
 
+puts "Deleting message..."
+Message.destroy_all
 puts "Deleting experience slices..."
 ExperienceSlice.destroy_all
 puts "Done"
@@ -177,14 +179,14 @@ puts "Creating message types..."
 @messageType = MessageType.new
 @messageType.message_type = "Day before"
 @messageType.day = 1
-@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce ' + message.experience.date.strftime(\'%A %d %B\') + '. Je vous donne donc rendez-vous demain à 18:30 à ' + message.experience.experience_slices.find_by_order(1).activity.meeting_point + ' . N\'oubliez pas de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
+@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce ' + message.experience.date.strftime(\'%A %d %B\') + '. Je vous donne donc rendez-vous demain à 18:30 à ' + message.experience.experience_slices.find_by_order(1).activity.meeting_point + ' . N oubliez pas de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
 @messageType.save!
 
 # Message 2
 @messageType = MessageType.new
 @messageType.message_type = "Teasing1"
 @messageType.day = 2
-@messageType.content = "message.experience.experience_slices.find_by_order(1).activity.teasing1"
+@messageType.content = "message.experience.experience_slices.find_by_order(1).activity.name"
 @messageType.save!
 
 # # Message 3
