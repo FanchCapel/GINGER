@@ -19,6 +19,7 @@ class ExperienceSlicesController < ApplicationController
       experience_slice.save
     end
     @experience.update(prepared_at: Time.now)
+    experience.generate_messages
     redirect_to experiences_path
   end
 

@@ -6,5 +6,4 @@ class MessageType < ApplicationRecord
   validates :message_type, presence: true
   validates :content, presence: true
 
-
 end
