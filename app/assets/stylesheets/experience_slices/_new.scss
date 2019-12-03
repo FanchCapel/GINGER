@@ -1,3 +1,43 @@
+.prepare-page h2, p, label {
+  color: white;
+}
+
+.prepare-page h2 {
+  color: white;
+  text-align: center;
+}
+
+.prepare-page h3 {
+  font-size: 22px;
+  color: white;
+  margin-top: 0px;
+}
+.activity-select-form {
+  padding-top: 0px;
+  background-color: $background-color;
+  max-height: 450px;
+  margin-bottom: 50px;
+}
+
+.experience-slice-title {
+  display: flex;
+  align-items: center;
+  height: 54px;
+  margin-top: 0;
+}
+
+.rank-wrapper {
+  padding: 0px 5px;
+  margin-bottom: 5px;
+}
+
+.experience-slice-holder {
+  background-color: white;
+  border-radius: 3px;
+  height: 70px;
+  padding: 5px 10px;
+}
+
 .form-group {
   margin-right: 10px;
 }
@@ -31,69 +71,31 @@
   background-color: #ccc;
 }
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  color: black;
-}
-
 .default {
   display: block;
 }
 
-#rank-list {
-  float:left;
-  height: 100%;
-  width: 200px;
-  background: #F7F7F7;
-  padding: 5px;
-  border: 1px solid #999999;
+.selections {
+  max-height: 450px;
 }
 
 #content-list {
-  float:left;
-  height: 452px;
-  border: 1px solid #999999;
-  padding: 5px;
+  max-height: 396px;
   overflow: auto;
-  margin-right:20px;
 }
 
 .content-wrapper {
-  border: 1px solid #DADADA;
-  height:52px;
-  text-align:center;
-  vertical-align:middle;
-  margin-bottom:3px;
+  display: flex;
+  justify-content: space-between;
+  // border: 1px solid #DADADA;
+  vertical-align: middle;
+  margin-bottom: 3px;
   background: #FFFFFF;
+  padding: 5px 15px;
+  border-radius: 3px;
 }
 
-.pipeline-rank-number {
-  width:12px;
-  height: 50px;
-  border: 1px solid #AFAFAF;
-  background: #AFAFAF;
-  color: #FFFFFF;
-  font-weight:bold;
-  float:left;
-  text-align:center;
-  line-height:50px;
-  font-size:11px;
-}
 
-.pipeline-holder {
-  height:52px;
-  padding:-1px;
-  margin-bottom:3px;
-  margin-left:16px;
-}
 
-.holder-empty {
-  border: 1px dashed #DADADA;
-  height:50px;
-}
 
 

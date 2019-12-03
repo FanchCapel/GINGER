@@ -4,7 +4,7 @@
     <div class="ginger-text">
       <p>Monsieur et Madame <%= @experience.user.primary_last_name %>, nous avons pris note de votre demande.
         Afin de confirmer votre expérience Ginger le <br> <str><%=
-      @experience.date.strftime("%m/%d/%Y") %> <%= @experience.time_slot == "en
+      @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en
       soirée" ? "soirée" : "après-midi" %><str>, <br> nous vous laissons le soin de valider votre paiement.
      <br> Votre Majordome Ginger <br>
    </p>

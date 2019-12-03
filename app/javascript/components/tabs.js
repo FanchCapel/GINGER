@@ -4,7 +4,7 @@ export const openCategory = (evt) => {
   const tabcontent = document.getElementsByClassName("tabcontent");
   for (let i = 0; i < tabcontent.length; i++) {
     if (tabcontent[i].parentElement.className.includes("dropzone")) {
-      tabcontent[i].style.display = "block";
+      tabcontent[i].style.display = "flex";
     } else {
       tabcontent[i].style.display = "none";
     }
@@ -19,7 +19,7 @@ export const openCategory = (evt) => {
   // Show the current tab, and add an "active" class to the button that opened the tab
   const elements = document.querySelectorAll(`.${evt.currentTarget.id}`)
   elements.forEach((element) => {
-    element.style.display = "block";
+    element.style.display = "flex";
   })
   evt.currentTarget.className += " active";
 }
