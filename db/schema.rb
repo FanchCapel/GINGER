@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_163150) do
+ActiveRecord::Schema.define(version: 2019_11_30_224146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2019_11_28_163150) do
     t.text "teasing1"
     t.text "teasing2"
     t.text "instruction"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_activities_on_category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -108,6 +110,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_163150) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "categories"
   add_foreign_key "experience_preferences_categories", "categories"
   add_foreign_key "experience_preferences_categories", "experiences"
   add_foreign_key "experience_slices", "activities"

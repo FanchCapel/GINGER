@@ -3,6 +3,7 @@ class Activity < ApplicationRecord
   monetize :price_cents
 
   # Associations
+  belongs_to :category
 
   # Validations
   validates :name, presence: true
