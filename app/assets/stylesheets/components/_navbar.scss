@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background:      #2F2E2B;
+  background:      transparent;
   height:          $navbarHeight;
+  z-index: 1;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -32,3 +34,10 @@ color: white;
 #login {
   color: $ginger;
 }
+
+// .navbar-default{
+//   background:transparent;
+//   background-image:none;
+//   border-color:transparent;
+//   box-shadow:none;
+// }
