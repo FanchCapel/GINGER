@@ -53,9 +53,11 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:experience_preferences_category][:experience])
     @experience_preferences_category = ExperiencePreferencesCategory.new
     @categories = Category.all
+    @slider = params[:slider]
     respond_to do |format|
       # format.html { redirect_to root_path }
       format.js
+      #  { render "preferences_form", locals: { sliderValue: params[:slider] } }
     end
   end
 

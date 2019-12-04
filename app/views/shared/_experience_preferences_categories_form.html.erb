@@ -1,4 +1,4 @@
   <%= simple_form_for [experience, experience_preferences_category] do |f| %>
-    <%= f.input :category, as: :check_boxes, collection: Category.all %>
+    <%= f.input :category, as: :check_boxes, collection: collection unless collection.empty?  %>
     <%= f.button :submit, class: "btn btn-primary", value: "Finaliser Mes Preferences" %>
   <% end %>

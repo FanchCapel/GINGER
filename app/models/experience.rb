@@ -8,6 +8,7 @@ class Experience < ApplicationRecord
   belongs_to :user
 
   has_many :experience_slices, dependent: :destroy
+  has_many :experience_preferences_categories, dependent: :destroy
   has_many :messages
 
   def generate_messages
