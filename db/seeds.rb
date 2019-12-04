@@ -1,7 +1,7 @@
 require 'csv'
 require 'faker'
 
-CATEGORIES = ['Food', 'Sport', 'Cultural', 'Social', 'Educational']
+CATEGORIES = ['Foodie', 'Sport', 'Culturelle', 'Artistique', 'Divertissante', 'Fun', 'Relaxante', 'Romantique', 'Concert', 'Nature', 'Culture', 'Dance', 'Sportive', 'Museum', 'Cooking class']
 CITIES = ["Lausanne", "Geneva", "Fribourg", "Sion", "Neuchatel"]
 TIME_SLOTS = ["en aprem", "en soirée"]
 BUDGETS = [150, 200, 250, 300, 350, 400, 450, 500]
@@ -43,18 +43,21 @@ end
 puts "Done"
 
 puts "Creating activities..."
-file_path = File.dirname(__FILE__) + "/seeds.csv"
+file_path = File.dirname(__FILE__) + "/seed2.csv"
 csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
 
 CSV.foreach(file_path, csv_options) do |row|
+  # binding.pry
   activity = Activity.create!({
-    name: row["Company name"],
-    description: Faker::Lorem.paragraphs,
-    meeting_point: Faker::Address.full_address,
-    duration: Faker::Number.within(range: 6..12) * 10,
-    city: CITIES.sample,
-    price: Faker::Number.within(range: 5..15) * 10,
-    category: Category.all.sample
+    name: row["Name"],
+    meeting_point: row["Meeting point"],
+    duration: row["Duration"],
+    city: row["City"],
+    price: row["Price"],
+    category: Category.find_by(name: row["Category"]),
+    teasing1: row["teasing1"],
+    teasing2: row["teasing2"],
+    instruction: row["Instruction"]
   })
 end
 puts "Done"
@@ -186,41 +189,41 @@ puts "Creating message types..."
 @messageType = MessageType.new
 @messageType.message_type = "Teasing1"
 @messageType.day = 2
-@messageType.content = "message.experience.experience_slices.find_by_order(1).activity.name"
+@messageType.content = "message.experience.experience_slices.find_by_order(1).activity.teasing1"
 @messageType.save!
 
-# # Message 3
-# @messageType = MessageType.new
-# @messageType.message_type = "Teasing2"
-# @messageType.day = 3
-# @messageType.content = "message.experience.experience_slice.find_by_order(3).activity.teasing2"
-# @messageType.save!
+# Message 3
+@messageType = MessageType.new
+@messageType.message_type = "Teasing2"
+@messageType.day = 3
+@messageType.content = "message.experience.experience_slice.find_by_order(3).activity.teasing2"
+@messageType.save!
 
-# # Message 4
-# @messageType = MessageType.new
-# @messageType.message_type = "Welcome"
-# @messageType.day = 4
-# @messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' + message.experience.experience_slice.find_by_order(1).activity.instruction"
-# @messageType.save!
+# Message 4
+@messageType = MessageType.new
+@messageType.message_type = "Welcome"
+@messageType.day = 4
+@messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' + message.experience.experience_slice.find_by_order(1).activity.instruction"
+@messageType.save!
 
-# # # Message 5
-# @messageType = MessageType.new
-# @messageType.message_type = "End of exp 1"
-# @messageType.day = 5
-# @messageType.content = "'Prêts pour la suite?' + message.experience.experience_slice.find_by_order(2).activity.instruction}'"
-# @messageType.save!
+# # Message 5
+@messageType = MessageType.new
+@messageType.message_type = "End of exp 1"
+@messageType.day = 5
+@messageType.content = "'Prêts pour la suite?' + message.experience.experience_slice.find_by_order(2).activity.instruction}'"
+@messageType.save!
 
-# # # Message 6
-# @messageType = MessageType.new
-# @messageType.message_type = "End of exp 2"
-# @messageType.day = 6
-# @messageType.content = "'Ce n\'est pas fini!' + message.experience.experience_slice.find_by_order(3).activity.teasing1'"
-# @messageType.save!
+# # Message 6
+@messageType = MessageType.new
+@messageType.message_type = "End of exp 2"
+@messageType.day = 6
+@messageType.content = "'Ce n est pas fini!' + message.experience.experience_slice.find_by_order(3).activity.instruction'"
+@messageType.save!
 
-# # Message 7
-# @messageType = MessageType.new
-# @messageType.message_type = "End"
-# @messageType.day = 7
-# @messageType.content = "Votre expérience touche à sa fin! Il est temps pour moi de vous souhaiter une bonne fin d\'expérience, en souhaitant vous revoir bientôt! Votre majordome, Ginger"
-# @messageType.save!
+# Message 7
+@messageType = MessageType.new
+@messageType.message_type = "End"
+@messageType.day = 7
+@messageType.content = "Votre expérience touche à sa fin! Il est temps pour moi de vous souhaiter une bonne fin d expérience, en souhaitant vous revoir bientôt! Votre majordome, Ginger"
+@messageType.save!
 puts "Done"
