@@ -11,6 +11,7 @@ PREF_LEVELS = [1, 2]
 
 puts "Deleting message..."
 Message.destroy_all
+puts "Done"
 puts "Deleting experience slices..."
 ExperienceSlice.destroy_all
 puts "Done"
@@ -76,24 +77,30 @@ User.create!(email:"cecile.colombo@gmail.com",password:"123456",password_confirm
 puts "Done"
 
 puts "Creating experiences..."
-30.times do
-  Experience.create!(user: User.all.sample, city: CITIES.sample, date: Time.zone.today + Faker::Number.within(range: 10..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample)
-end
-puts "Done"
-
-puts "Creating experiences slices..."
-15.times do
-  experience = Experience.all.sample
-  if experience.prepared_at.nil?
+10.times do
+  experience = Experience.new(user: User.all.sample, city: CITIES.sample, date: Time.zone.today + Faker::Number.within(range: 0..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample)
+  experience.save
+  random_sample = [0, 1, 2].sample
+  if random_sample == 1
+    experience.update!(paid_at: Time.zone.today - Faker::Number.within(range: 20..30).day)
+  elsif random_sample == 2
     activities = Activity.all.sample(3)
     ExperienceSlice.create!(experience: experience, activity: activities[0], order: 1)
     ExperienceSlice.create!(experience: experience, activity: activities[1], order: 2)
     ExperienceSlice.create!(experience: experience, activity: activities[2], order: 3)
-    experience.update!(prepared_at: Time.zone.today + Faker::Number.within(range: 10..30).day)
-    if [0, 1].sample === 1
-      experience.update!(paid_at: Time.zone.today + Faker::Number.within(range: 10..30).day)
-    end
+    experience.update!(prepared_at: Time.zone.today - Faker::Number.within(range: 10..20).day)
+    experience.update!(paid_at: Time.zone.today - Faker::Number.within(range: 20..30).day)
   end
+end
+20.times do
+  experience = Experience.new(user: User.all.sample, city: CITIES.sample, date: Time.zone.today - Faker::Number.within(range: 0..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample, prepared_at: Time.zone.today - Faker::Number.within(range: 30..40).day, paid_at: Time.zone.today - Faker::Number.within(range: 40..50).day)
+  experience.save!
+  activities = Activity.all.sample(3)
+  ExperienceSlice.create!(experience: experience, activity: activities[0], order: 1)
+  ExperienceSlice.create!(experience: experience, activity: activities[1], order: 2)
+  ExperienceSlice.create!(experience: experience, activity: activities[2], order: 3)
+  experience.update!(prepared_at: Time.zone.today - Faker::Number.within(range: 10..20).day)
+  experience.update!(paid_at: Time.zone.today - Faker::Number.within(range: 20..30).day)
 end
 puts "Done"
 
