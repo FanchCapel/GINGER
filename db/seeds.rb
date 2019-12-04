@@ -78,7 +78,7 @@ puts "Done"
 
 puts "Creating experiences..."
 10.times do
-  experience = Experience.new(user: User.all.sample, city: CITIES.sample, date: Time.zone.today + Faker::Number.within(range: 0..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample)
+  experience = Experience.new(user: User.all.sample, city: CITIES.sample, date: Time.zone.today + Faker::Number.within(range: 1..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample)
   experience.save
   random_sample = [0, 1, 2].sample
   if random_sample == 1
@@ -93,7 +93,7 @@ puts "Creating experiences..."
   end
 end
 20.times do
-  experience = Experience.new(user: User.all.sample, city: CITIES.sample, date: Time.zone.today - Faker::Number.within(range: 0..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample, prepared_at: Time.zone.today - Faker::Number.within(range: 30..40).day, paid_at: Time.zone.today - Faker::Number.within(range: 40..50).day)
+  experience = Experience.new(user: User.all.sample, city: CITIES.sample, date: Time.zone.today - Faker::Number.within(range: 1..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample, prepared_at: Time.zone.today - Faker::Number.within(range: 30..40).day, paid_at: Time.zone.today - Faker::Number.within(range: 40..50).day)
   experience.save!
   activities = Activity.all.sample(3)
   ExperienceSlice.create!(experience: experience, activity: activities[0], order: 1)
