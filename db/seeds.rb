@@ -2,10 +2,10 @@ require 'csv'
 require 'faker'
 
 CATEGORIES = ['Foodie', 'Sport', 'Culturelle', 'Artistique', 'Divertissante', 'Fun', 'Relaxante', 'Romantique', 'Concert', 'Nature', 'Culture', 'Dance', 'Sportive', 'Museum', 'Cooking class']
-CITIES = ["Lausanne", "Geneva", "Fribourg", "Sion", "Neuchatel"]
+CITIES = Experience::CITY
 TIME_SLOTS = ["en aprem", "en soirée"]
 BUDGETS = [150, 200, 250, 300, 350, 400, 450, 500]
-PREF_LEVELS = [1, 2, 3]
+PREF_LEVELS = [1, 2]
 
 # ---------------------- DELETE -----------------------------------
 
