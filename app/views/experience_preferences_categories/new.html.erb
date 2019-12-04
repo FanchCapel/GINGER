@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container mt-5">
   <h2>Specify your preferences</h2>
 
 
   <%= simple_form_for [@experience, @experience_preferences_category], remote: true, url: experience_preferences_form_path, method: :post, html: { class: 'slider-form' } do |f| %>
     <%=  f.input :experience, as: :hidden, input_html: { value: @experience.id } %>
     <div class="slidecontainer">
-      <input type="range" min="1" max="3" value="3" class="slider" id="exp-preferences" name="slider">
+      <input type="range" min="1" max="3" value="2" class="slider" id="exp-preferences" name="slider">
     </div>
   <% end %>
   <div class="preferences-form" id="preferences-form">
