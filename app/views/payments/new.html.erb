@@ -1,23 +1,39 @@
 
+
+<h1 class="experience-title">A un clic d'une nouvelle expérience</h1>
 <div class="container">
-  <div class="d-flex justify-content-between">
-    <div class="ginger-text">
-      <p>Monsieur et Madame <%= @experience.user.primary_last_name %>, nous avons pris note de votre demande.
-        Afin de confirmer votre expérience Ginger le <br> <str><%=
-      @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en
-      soirée" ? "soirée" : "après-midi" %><str>, <br> nous vous laissons le soin de valider votre paiement.
-     <br> Votre Majordome Ginger <br>
-   </p>
-      <div class="pay-btn">
-        <button id="pay" class="btn-g" style="width: 30%">Payer</button>
-      </div>
+    <div class="row text-white">
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4" id="butler-container">
+            <div class="ginger-img">
+              <%= image_tag "ginger-butler.png", id: 'butler-image'%>
+            </div>
+            <div class="px-2">
+              <div class="justify-content-center">
+                <div class="exp-text typewriter">
+                  <p>Monsieur et Madame <%= @experience.user.primary_last_name %>,</p>
+                  <p>nous avons pris note de votre demande.</p>
+                  <p> Afin de confirmer votre expérience Ginger le </p>
+                  <p> <str><%= @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en
+                    soirée" ? "soirée" : "après-midi" %><str>,</p>
+                  <p> nous vous laissons le soin de valider votre paiement.</p>
+                  <p> Votre Majordome Ginger </p>
+                  <div class="pay-btn">
+                    <button id="pay" class="btn-g" style="width: 30%">Payer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
-    <div class="ginger-img">
-      <%= image_tag "ginger_hipster.png" %>
-    </div>
-  </div>
 </div>
 
+<div class="crossfade">
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+</div>
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
