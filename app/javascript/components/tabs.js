@@ -45,7 +45,7 @@ export const filterOnClick = (evt) => {
 
 export const clickEvents = () => {
   const tablinks = document.querySelectorAll('.tablinks')
-  if (tablinks !== null) {
+  if (tablinks.length !== 0) {
     tablinks.forEach((tablink) => {
     tablink.addEventListener('click', e => filterOnClick(e));
   });
@@ -53,10 +53,10 @@ export const clickEvents = () => {
 }
 
 export const filterAfterLoad = () => {
-  const tablinks = document.querySelectorAll('.tablinks.active')
-  if (tablinks !== null) {
+  const tabs = document.querySelectorAll('.tablinks.active')
+  if (tabs.length !== 0) {
     hideElements();
-    displayFilteredElements(tablinks[0], tablinks[1]);
+    displayFilteredElements(tabs[0], tabs[1]);
   }
 }
 
