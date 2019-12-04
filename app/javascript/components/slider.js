@@ -8,4 +8,9 @@ export const sliderValue = () => {
   }
 }
 
+export const showCategories = (formHTML) => {
+  const form = document.getElementById('preferences-form');
+  form.insertAdjacentHTML('beforeend', formHTML);
+}
+
 sliderValue();
