@@ -1,7 +1,7 @@
 require 'csv'
 require 'faker'
 
-CATEGORIES = ['Foodie', 'Sport', 'Culturelle', 'Artistique', 'Divertissante', 'Fun', 'Relaxante', 'Romantique', 'Concert', 'Nature', 'Culture', 'Dance', 'Sportive', 'Museum', 'Cooking class']
+CATEGORIES = ['Foodie', 'Sport', 'Artistique', 'Divertissante', 'Fun', 'Relaxante', 'Romantique', 'Concert', 'Nature', 'Culture', 'Dance', 'Cooking class']
 CITIES = Experience::CITY
 TIME_SLOTS = ["en aprem", "en soirée"]
 BUDGETS = [150, 200, 250, 300, 350, 400, 450, 500]
@@ -43,7 +43,7 @@ end
 puts "Done"
 
 puts "Creating activities..."
-file_path = File.dirname(__FILE__) + "/seed2.csv"
+file_path = File.dirname(__FILE__) + "/seed4.csv"
 csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
 
 CSV.foreach(file_path, csv_options) do |row|
