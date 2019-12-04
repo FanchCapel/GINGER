@@ -4,6 +4,7 @@
   height:          $navbarHeight;
   z-index: 10;
   width: 100%;
+  color: $ginger;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,6 +14,10 @@
 .nav-link {
   color: white;
   // color: #E1DCD5;
+}
+
+.navbar-brand {
+  flex-grow: 1;
 }
 
 .navbar-lewagon .navbar-brand img {
