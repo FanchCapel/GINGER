@@ -10,6 +10,5 @@ class Activity < ApplicationRecord
   validates :duration, presence: true
   validates :city, presence: true
   validates :meeting_point, presence: true
-  validates :description, presence: true
   validates :price, presence: true
 end
