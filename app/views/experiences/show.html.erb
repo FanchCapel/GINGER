@@ -1,10 +1,26 @@
+
+<h1 class="experience-title">Prochaine étape, laissez faire le guide</h1>
 <div class="container">
-  <div class="d-flex justify-content-between">
-    <div class="ginger-text">
-      <p>Monsieur et Madame <%= @experience.user.primary_last_name %>, les preparatifs sont en cours pour votre <%= @experience.time_slot == "en soirée" ? "soirée" : "après-midi" %> du <%= @experience.date.strftime("%d/%m/%Y") %>. Je m'occupe de tout et je vous envoie un petit texto dès que j'ai fini de tout organiser. <br>A bientot,<br>Votre Majordome Ginger</p>
+    <div class="row text-white">
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4" id="butler-container">
+            <div class="ginger-img">
+              <%= image_tag "ginger-butler.png", id: 'butler-image'%>
+            </div>
+            <div class="px-2">
+              <div class="justify-content-center">
+                <div class="exp-text">
+                  <p>Monsieur et Madame <%= @experience.user.primary_last_name %>,</br> les preparatifs sont en cours pour votre <%= @experience.time_slot == "en soirée" ? "soirée" : "après-midi" %> du <%= @experience.date.strftime("%d/%m/%Y") %>.</br> Je m'occupe de tout et je vous envoie un petit texto dès que j'ai fini de tout organiser. <br>A bientot,<br>Votre Majordome Ginger</p>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
-    <div class="ginger-img">
-      <%= image_tag "ginger_hipster.png" %>
-    </div>
-  </div>
+</div>
+
+<div class="crossfade">
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
 </div>
