@@ -10,10 +10,11 @@
               <div class="justify-content-center">
                 <div class="exp-text typewriter">
                   <p>Monsieur et Madame <%= @experience.user.primary_last_name %>,</p>
-                  <p> les preparatifs sont en cours pour votre <%= @experience.time_slot == "en soirée" ? "soirée" : "après-midi" %> du <%= @experience.date.strftime("%d/%m/%Y") %>.</p>
-                  <p> Je m'occupe de tout et je vous envoie un petit texto </p>
-                  <p>dès que j'ai fini de tout organiser. </p>
-                  <p> A bientot,</p>
+                  <p> les préparatifs sont en cours pour votre <%= @experience.time_slot == "en soirée" ? "soirée" : "après-midi" %> </p>
+                  <p> du <%= @experience.date.strftime("%d/%m/%Y") %>.</p>
+                  <p> Je vous recontacterai par texto </p>
+                  <p>la veille de l'évènement. </p>
+                  <p> A bientôt,</p>
                   <p> Votre Majordome Ginger</p>
                 </div>
               </div>

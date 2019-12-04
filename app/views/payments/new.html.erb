@@ -9,13 +9,14 @@
             </div>
             <div class="px-2">
               <div class="justify-content-center">
-                <div class="exp-text typewriter">
+                <div class="exp-text typewriter-new">
                   <p>Monsieur et Madame <%= @experience.user.primary_last_name %>,</p>
                   <p>nous avons pris note de votre demande.</p>
-                  <p> Afin de confirmer votre expérience Ginger le </p>
-                  <p> <str><%= @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en
+                  <p>Afin de confirmer votre expérience Ginger</p>
+                  <p>le <str><%= @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en
                     soirée" ? "soirée" : "après-midi" %><str>,</p>
-                  <p> nous vous laissons le soin de valider votre paiement.</p>
+                  <p> nous vous laissons le soin</p>
+                  <p> de valider votre paiement.</p>
                   <p> Votre Majordome Ginger </p>
                   <div class="pay-btn">
                     <button id="pay" class="btn-g" style="width: 30%">Payer</button>
