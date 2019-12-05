@@ -2,6 +2,10 @@
   height: 100px;
 }
 
+#butler-image-home {
+  height: 80px;
+}
+
 
 // .form:before {
 //     content: '';
@@ -24,8 +28,25 @@
   margin-top: 10px;
 }
 
+#butler-container-home {
+  background-color: rgba(0,0,0,0.4);
+  // height: 325px;
+  // width: auto;
+  border-radius: 20px;
+  width: 14%;
+  z-index: 2;
+  margin-left: 10px !important;
+  bottom: 0;
+}
+
 .exp-text p {
   font-size: 20px;
+  text-align: center;
+  width: auto;
+}
+
+.exp-text-home p {
+  font-size: 14px;
   text-align: center;
   width: auto;
 }
