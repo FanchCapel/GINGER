@@ -7,7 +7,7 @@
       <%= f.input :city, label: 'La ville de votre expérience?', collection: Experience::CITY %>
       <%= f.input :date, order: [:day, :month, :year]%>
       <%= f.input :time_slot, label: 'A quel moment de la journée?', as: :radio_buttons, collection: ['en journée', 'en soirée']%>
-      <%= f.input :budget_cents, label: 'Votre budget', collection: [150, 200, 250, 300, 350, 400, 450, 500]%>
+      <%= f.input :budget_cents, label: 'Votre budget', collection: [["150 CHF", 150], ["200 CHF", 200], ["250 CHF", 250], ["300 CHF", 300], ["350 CHF", 350], ["400 CHF", 400], ["450 CHF", 450], ["500 CHF", 500], ]%>
       <%= f.button :submit, class: 'btn-g' %>
     <% end %>
   </div>
