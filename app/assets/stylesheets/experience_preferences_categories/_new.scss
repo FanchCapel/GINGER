@@ -31,11 +31,12 @@ a {
 
 .container-s p {
   font-size: 25px;
-  color: black;
 }
 
 .surprise-banner {
-  background-image: asset-url('surprise.png');
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('surprise.png');
   height: 100vh;
   position: relative;
   background-attachment: fixed;
@@ -54,8 +55,8 @@ a {
 
 .container-s {
   position: absolute;
-  top: 25vh;
-  left: 5vw;
+  width: 80vw;
+  margin-top: 15vh;
   text-align: center;
   color: white;
 }
@@ -64,6 +65,10 @@ a {
   text-align: left;
   margin-left: 20px;
 
+}
+
+#confort-btn {
+  margin-bottom: 40px !important;
 }
 
 
@@ -80,7 +85,7 @@ a {
 }
 
 .namerange {
-  color: black;
+  color: $ginger;
   font-size: 20px;
 }
 
