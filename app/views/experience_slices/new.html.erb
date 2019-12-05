@@ -19,7 +19,7 @@
     <div class="selections col-lg-6">
       <div class="tab">
         <% @categories.each do |category| %>
-          <button class="category tablinks <%= 'active' if category == Category.first %>" id="<%= category.name %>"><%= category.name %></button>
+          <button class="category tablinks<%= ' active' if category == Category.first %><%= ' excluded' if !@experience.experience_preferences_categories.where(category: category).empty? %>" id="<%= category.name %>"><%= category.name %></button>
         <% end %>
       </div>
       <div class="tab mb-1">

@@ -60,7 +60,7 @@
               <span><i class="fas fa-2x fa-edit"></i></span>
             <% end %>
           <% end %>
-          <% if experience.date < Time.zone.now %>
+          <% if experience.date < Date.today %>
             <span><i class="fas fa-2x fa-check"></i></span>
           <% end %>
         </div>
