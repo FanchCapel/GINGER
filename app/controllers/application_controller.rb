@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if current_user.admin?
-      experiences_path
+      admin_index_path
     else
       new_experience_path
     end
