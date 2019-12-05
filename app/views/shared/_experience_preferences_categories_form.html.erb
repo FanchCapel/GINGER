@@ -1,9 +1,17 @@
 
 <!-- <div class="container">
   <div class="row"> -->
-    <%= simple_form_for [experience, experience_preferences_category] do |f| %>
-        <%= f.input :category, as: :check_boxes, collection: collection unless collection.empty?%>
-        <%= f.button :submit, class: "btn-g smallbtn", value: "Finaliser Mes Preferences" %>
+    <%= simple_form_for [experience, experience_preferences_category], wrapper_mappings: {check_boxes: :horizontal_collection} do |f| %>
+      <div class="d-flex">
+        <div class="row">
+          <% collection.each do |category| %>
+            <div class="col-4">
+              <%= f.input :category, as: :check_boxes, collection: [category], label: false %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= f.button :submit, class: "btn-g smallbtn", value: "Finaliser Mes Preferences" %>
     <% end %>
   <!-- </div>
 </div>
