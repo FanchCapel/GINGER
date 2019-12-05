@@ -235,9 +235,9 @@ puts "Creating message types..."
 # @messageType.save!
 puts "Done"
 
-# ---------------------------- Create Michel and his experiences ------------------------------------------------------
-puts "Creating Michel..."
-User.create!(email:"michel.ginger@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0799999999',secondary_number: '0791234567', primary_first_name: "Michel", primary_last_name: "Ginger")
+# ---------------------------- Create Nathan and his experiences ------------------------------------------------------
+puts "Creating Nathan..."
+User.create!(email:"nathan.tempels@hotmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Nathan", primary_last_name: "Tempels")
 3.times do
   experience = Experience.new(user: User.last, city: "Lausanne", date: Time.zone.today - Faker::Number.within(range: 10..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample, prepared_at: Time.zone.now - Faker::Number.within(range:30..40).day, paid_at: Time.zone.now - Faker::Number.within(range:40..60).day)
   activities = Activity.all.sample(3)
@@ -246,7 +246,7 @@ User.create!(email:"michel.ginger@gmail.com",password:"123456",password_confirma
   ExperienceSlice.create!(experience: experience, activity: activities[1], order: 2)
   ExperienceSlice.create!(experience: experience, activity: activities[2], order: 3)
 end
-puts "Michel done."
+puts "Nathan done."
 
 
 
