@@ -1,18 +1,18 @@
 <div class="admin">
-  <h2>Experience Overview</h2>
+  <h2>Resumé des Experiences</h2>
     <div class="headers row align-middle">
-      <div class="col-lg-2 d-flex align-items-center justify-content-start">User</div>
-      <div class="col-lg-1 d-flex align-items-center justify-content-around">City<br>Budget</div>
-      <div class="col-lg-1 d-flex align-items-center justify-content-around">Date<br>Time</div>
-      <div class="col-lg-6 d-flex align-items-center justify-content-around">Activities</div>
+      <div class="col-lg-2 d-flex align-items-center justify-content-start">Utilisateur</div>
+      <div class="col-lg-1 d-flex align-items-center justify-content-around">Ville<br>Budget</div>
+      <div class="col-lg-1 d-flex align-items-center justify-content-around">Date<br>Heure</div>
+      <div class="col-lg-6 d-flex align-items-center justify-content-around">Activités</div>
       <div class="status col-lg-1 px-0">
-        <div>Status</div>
+        <div>Statut</div>
         <div class="sub-status d-flex align-items-center justify-content-around px-0">
-          <div class="status-paid">Paid?</div>
+          <div class="status-paid">Payé?</div>
           <div class="status-prepared">Prep?</div>
         </div>
       </div>
-      <div class="col-lg-1 d-flex align-items-center justify-content-end">Prepare</div>
+      <div class="col-lg-1 d-flex align-items-center justify-content-end">Preparer</div>
     </div>
     <% @experiences.each do |experience| %>
       <div class="row experience-card">
@@ -21,7 +21,7 @@
         </div>
         <div class="experience-info-location col-lg-1">
           <div class="d-flex align-items-center">
-            <%= experience.city %>
+            <%= experience.city %> <br>
             <%= "#{experience.budget_cents} CHF" %>
           </div>
         </div>
