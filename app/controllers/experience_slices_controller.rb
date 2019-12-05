@@ -22,7 +22,7 @@ class ExperienceSlicesController < ApplicationController
     end
     @experience.update(prepared_at: Time.now)
     @experience.generate_messages
-    redirect_to experiences_path
+    redirect_to admin_index_path
   end
 
   def edit

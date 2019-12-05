@@ -1,15 +1,16 @@
-.user-index {
-  width: 70vw;
+.admin {
+  width: 90vw;
   margin: 0 auto;
   color: white;
   margin-top: 12vh;
+
 
   h2 {
     text-align: center;
     margin-bottom: 30px;
   }
 
-  .user-headers {
+  .headers {
     height: 70px;
     background-color: white;
     color: black;
@@ -23,21 +24,19 @@
   }
 }
 
-.user-experience-card {
+.experience-card {
   background-color: darkgrey;
   margin-bottom: 3px;
   padding: 10px 10px;
   border-radius: 3px;
 
   .experience-info-location {
+    height: 100%;
     text-align: center;
   }
 
-  .surprise {
-    color: $ginger;
-  }
-
-  .experience-info-date{
+  .experience-info-datetime{
+    height: 100%;
     text-align: center;
   }
   .experience-prepared {

@@ -1,13 +1,17 @@
 class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
-  def index
+  def admin_index
     redirect_to root_path, warning: "You are not authorized to access this page!" unless current_user.admin?
     future_experiences = Experience.where("date >= ?", Time.zone.now).sort_by{ |experience| [experience.prepared_at ? 1 : 0, experience.paid_at ? 0 : 1, experience.date] }
     past_experiences = Experience.where("date < ?", Time.zone.now).sort_by{ |experience| experience.date }
     @experiences = future_experiences + past_experiences
 
     @experience_slices = ExperienceSlice.all
+  end
+
+  def index
+    @experiences = Experience.where(user: current_user).sort_by{ |experience| experience.date }.reverse
   end
 
   def new

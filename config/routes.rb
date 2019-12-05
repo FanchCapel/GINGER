@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'admin_index', to: 'experiences#admin_index'
   resources :experiences, only: [:index, :new, :create, :edit, :update, :show] do
     resources :experience_slices, only: [:new, :create, :edit, :update]
     resources :payments, only: :new
