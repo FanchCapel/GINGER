@@ -3,7 +3,10 @@ class ExperiencesController < ApplicationController
 
   def index
     redirect_to root_path, warning: "You are not authorized to access this page!" unless current_user.admin?
-    @experiences = Experience.all.sort_by{ |experience| experience.id }
+    future_experiences = Experience.where("date >= ?", Time.zone.now).sort_by{ |experience| [experience.prepared_at ? 1 : 0, experience.paid_at ? 0 : 1, experience.date] }
+    past_experiences = Experience.where("date < ?", Time.zone.now).sort_by{ |experience| experience.date }
+    @experiences = future_experiences + past_experiences
+
     @experience_slices = ExperienceSlice.all
   end
 
