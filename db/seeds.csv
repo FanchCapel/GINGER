@@ -3,7 +3,7 @@ Claude Merkli;20;Lausanne;Artistique;Place Saint Francois;100;vous soufflerez de
 Colore ta vie;30;Lausanne;Artistique;Place Saint Francois;50;Vous redécorerez votre intérieur;Vous redécorerez votre intérieur;dirigez vous vers la rue de bourg et cherchez la façade bleu à l'enseigne dorée;;;;;;
 Philippe K;60;Lausanne;Artistique;Place Saint Francois;300;vous sentirez bon;vous sentirez bon;Quelqu'un vous attend dans l'église, il a un veston gris.;;;;;;
 Kydro;60;Lausanne;Artistique;Place Saint Francois;50;Un remake de ghost :);Un remake de ghost :);Entrez dans la limousine Tesla grise. Le chauffeur a un képi.;;;;;;
-Graffiti course;100;Lausanne;Artistique;Place Saint Francois;100;Ca swiguera ;Ca swiguera ;Quelqu'un vous attend dans l'église, il a un veston gris.;;;;;;
+Graffiti course;100;Lausanne;Artistique;Place Saint Francois devant les portes de l'église;100;Ce soir vous allez adorer passer un petit moment sous les ponts ;Ca swiguera ;Quelqu'un vous attend dans l'église, il a un veston gris.;;;;;;
 LOFT;20;Lausanne;Artistique;Place Saint Francois;50;on vous envoie au 7eme ciel;on vous envoie au 7eme ciel;Entrez dans le premier bar en sortant à gauche. Demandez un parapluie.;;;;;;
 Melazic;110;Geneve;Artistique;Place Saint Francois;150;Vous redécorerez votre intérieur;Vous redécorerez votre intérieur;Entrez dans le premier bar en sortant à gauche. Demandez un parapluie.;;;;;;
 Oh My cake;30;Geneve;Artistique;Place Saint Francois;50;vous sentirez bon;vous sentirez bon;Dirigez vous vers les portes saint francois et cherchez l'ensigne contenant le mot bulle;;;;;;
@@ -39,7 +39,7 @@ Bagatelle;60;Lausanne;Foodie;Place Saint Francois;200;Comme au bon vieux temps l
 Bagel on the way;60;Lausanne;Foodie;Place Saint Francois;200;NYC en Romandie;NYC en Romandie;dirigez vous vers la rue de bourg et cherchez la façade bleu à l'enseigne dorée;;;;;;
 Bamee bistro;60;Lausanne;Foodie;Place Saint Francois;100;Le vietnam en romandie;comme un poisson dans l'eau;Quelqu'un vous attend dans l'église, il a un veston gris.;;;;;;
 Banh mi Olimy;60;Lausanne;Foodie;Place Saint Francois;50;Un sandwich inhabituel;bonjour soleil;Allez vers le port au grand chateau, entrez dedans;;;;;;
-Bar du beau rivage;60;Lausanne;Foodie;Place Saint Francois;100;Une vue à couper le souffle ! Ou êtes vous ?;une symphonie;cherchez le resto de la rue du Flon;;;;;;
+Bar du beau rivage;60;Lausanne;Foodie;Place Saint Francois;100;Une vue à couper le souffle ! Ou êtes vous ?;une symphonie;prenez le métro et arretez vous à Ouchy Olympique. Longez le lac en direction du musée olympique. Demandez un parapluie au bar du beau rivage  ;;;;;;
 Bar Tabac;60;Lausanne;Foodie;Place Saint Francois;100;On n’y fume plus;la tete dans les étoiles;Dirigez vous vers Chauderon et stoppez à la facade verte;;;;;;
 Barbe rousse;60;Lausanne;Foodie;Place Saint Francois;100;pour les fondus de sensations;to be or not to be;Entrez dans la limousine Tesla grise. Le chauffeur a un képi.;;;;;;
 Beau Rivage palace;60;Lausanne;Foodie;Place Saint Francois;150;comme un poisson dans l'eau;showtime !;Entrez dans le premier bar en sortant à gauche. Demandez un parapluie.;;;;;;
@@ -178,7 +178,7 @@ LaSpaSuite;80;Geneve;Relaxante;Place Saint Francois;150;bonjour soleil;bonjour s
 K's Fashion studio Lausanne;80;Geneve;Relaxante;Place Saint Francois;50;la tete dans les étoiles;la tete dans les étoiles;dirigez vous vers la rue de bourg et cherchez la façade bleu à l'enseigne dorée;;;;;;
 Method Meryem;70;Geneve;Relaxante;Place Saint Francois;50;to be or not to be;to be or not to be;Quelqu'un vous attend dans l'église, il a un veston gris.;;;;;;
 Espace beauté Eau Marine;20;Morges;Relaxante;Place Saint Francois;300;bonjour soleil;bonjour soleil;dirigez vous vers la rue de bourg et cherchez la façade bleu à l'enseigne dorée;;;;;;
-institut Maryligne;90;Lausanne;Relaxante;Place Saint Francois;100;comme un poisson dans l'eau;comme un poisson dans l'eau;Quelqu'un vous attend dans l'église, il a un veston gris.;;;;;;
+Institut Maryligne;90;Lausanne;Relaxante;Place Saint Francois;100;comme un poisson dans l'eau;comme un poisson dans l'eau;Longez la rue qui monte vers le centre ville et sonnez au 2 avenue de l'Elysée;;;;;;
 CGN Belle Epoque;90;Lausanne;Romantique;Place Saint Francois;150;bienvenue en 1905;bienvenue en 1906;Quelqu'un vous attend dans l'église, il a un veston gris.;;;;;;
 Night in amazing property;70;Lausanne;Romantique;Place Saint Francois;250;Lady for a day, gentleman forever;Lady for a day, gentleman forever;dirigez vous vers la rue de bourg et cherchez la façade bleu à l'enseigne dorée;;;;;;
 Star gazing at Lausanne;120;Lausanne;Romantique;Place Saint Francois;50;la tete dans les étoiles;la tete dans les étoiles;Entrez dans la limousine Tesla grise. Le chauffeur a un képi.;;;;;;
