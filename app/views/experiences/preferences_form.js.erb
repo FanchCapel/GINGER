@@ -13,9 +13,9 @@ function changeMessage(messageText) {
 
 if (<%= @slider %> === 1) {
   showCategories('<%= j render "shared/experience_preferences_categories_form", experience: @experience, experience_preferences_category: @experience_preferences_category, collection: Category.all %>');
-  changeMessage("Si, comme Bridget Jones, vous êtes particulière et vous voulez personaliser votre experience, indiquez-moi les catégories d'activités que VOUS NE VOULEZ PAS FAIRE. Je m'occuperai du reste.");
+  changeMessage("Mode Bridget Jones: cochez les expériences que vous ne voulez PAS FAIRE. Ginger s'occupe du reste.");
 } else {
   showCategories('<%= j render "shared/experience_preferences_categories_form", experience: @experience, experience_preferences_category: @experience_preferences_category, collection: [] %>');
-  changeMessage("Indiana Jones était un vrai aventurier. Si, comme lui, vous êtes ouverts à toute éxperience, laisser moi tout choisir pour vous. Je m'occuperai de tout.");
+  changeMessage("Mode Indiana Jones: Ginger choisit pour vous pour une surprise totale.");
 }
 
