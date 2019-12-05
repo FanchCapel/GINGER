@@ -18,7 +18,7 @@ class ExperiencePreferencesCategoriesController < ApplicationController
       )
       # @experience.update(preference_level: params[:slider])
     end
-    redirect_to root_path
+    redirect_to new_experience_payment_path(@experience)
   end
 
   private

@@ -36,7 +36,7 @@ class ExperiencesController < ApplicationController
         )
 
         @experience.update(checkout_session_id: session.id)
-        redirect_to new_experience_payment_path(@experience)
+        redirect_to new_experience_experience_preferences_category_path(@experience)
       else
         render :new
       end
