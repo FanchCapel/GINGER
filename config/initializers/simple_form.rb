@@ -22,7 +22,7 @@ SimpleForm.setup do |config|
   #   ba.use :label_input, :wrap_with => { :class => 'checkbox inline' }
   #   ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
   #   ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
-  # end
+  end
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.
     # You can make any of these extensions optional by
