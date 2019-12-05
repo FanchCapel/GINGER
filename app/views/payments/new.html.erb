@@ -13,8 +13,7 @@
                   <p>Monsieur et Madame <%= @experience.user.primary_last_name %>,</p>
                   <p>nous avons pris note de votre demande.</p>
                   <p>Afin de confirmer votre expérience Ginger</p>
-                  <p>le <str><%= @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en
-                    soirée" ? "soirée" : "après-midi" %><str> pour <%= @experience.budget_cents %> CHF,</p>
+                  <p>le <str><%= @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en soirée" ? "soirée" : "après-midi" %><str> pour <%= @experience.budget_cents %> CHF,</p>
                   <p> nous vous laissons le soin</p>
                   <p> de valider votre paiement.</p>
                   <p> Votre Majordome Ginger </p>
