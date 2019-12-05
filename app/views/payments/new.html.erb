@@ -2,23 +2,24 @@
 
 <h1 class="experience-title">A un clic d'une nouvelle expérience</h1>
 <div class="container">
-    <div class="row text-white">
-        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4" id="butler-container">
+    <div class="row text-white" id="butler-handler">
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-1" id="butler-container">
             <div class="ginger-img">
               <%= image_tag "ginger-butler.png", id: 'butler-image'%>
             </div>
             <div class="px-2">
               <div class="justify-content-center">
-                <div class="exp-text typewriter">
+                <div class="exp-text typewriter-new">
                   <p>Monsieur et Madame <%= @experience.user.primary_last_name %>,</p>
                   <p>nous avons pris note de votre demande.</p>
-                  <p> Afin de confirmer votre expérience Ginger le </p>
-                  <p> <str><%= @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en
+                  <p>Afin de confirmer votre expérience Ginger</p>
+                  <p>le <str><%= @experience.date.strftime("%d/%m/%Y") %> <%= @experience.time_slot == "en
                     soirée" ? "soirée" : "après-midi" %><str>,</p>
-                  <p> nous vous laissons le soin de valider votre paiement.</p>
+                  <p> nous vous laissons le soin</p>
+                  <p> de valider votre paiement.</p>
                   <p> Votre Majordome Ginger </p>
                   <div class="pay-btn">
-                    <button id="pay" class="btn-g" style="width: 30%">Payer</button>
+                    <button id="pay" class="btn-g" style="width: 200px">Payer</button>
                   </div>
                 </div>
               </div>
