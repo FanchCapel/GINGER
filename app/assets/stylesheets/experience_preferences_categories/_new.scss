@@ -29,8 +29,9 @@ a {
   text-decoration: none;
 }
 
-p {
+.container-s p {
   font-size: 25px;
+  color: black;
 }
 
 .surprise-banner {
@@ -122,6 +123,11 @@ p {
   background-color: white;
   opacity: 0.5;
 
+}
+
+.experience_preferences_category_category {
+  color: red;
+  display: flex;
 }
 
 
