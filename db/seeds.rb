@@ -44,7 +44,7 @@ end
 puts "Done"
 
 puts "Creating activities..."
-file_path = File.dirname(__FILE__) + "/seed4.csv"
+file_path = File.dirname(__FILE__) + "/seeds.csv"
 csv_options = { col_sep: ';', quote_char: '"', headers: :first_row }
 
 CSV.foreach(file_path, csv_options) do |row|
