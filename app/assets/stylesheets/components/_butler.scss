@@ -2,6 +2,7 @@
   height: 100px;
 }
 
+
 // .form:before {
 //     content: '';
 //     height:           100%;
@@ -19,11 +20,12 @@
   // height: 325px;
   // width: auto;
   border-radius: 20px;
-  max-width: 70%;
+  min-width: 50%;
+  margin-top: 10px;
 }
 
 .exp-text p {
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
   width: auto;
 }
@@ -34,7 +36,7 @@
 
 .experience-title {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 12vh;
 }
 
 .typewriter p {
