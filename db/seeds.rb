@@ -185,12 +185,12 @@ puts "Done"
 
 
 puts "Creating message types..."
-# # Message 1
-# @messageType = MessageType.new
-# @messageType.message_type = "Day before"
-# @messageType.day = 1
-# @messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce ' + message.experience.date.strftime(\'%A %d %B\') + '. Je vous donne donc rendez-vous demain à 18:30 à ' + message.experience.experience_slices.find_by_order(1).activity.meeting_point + ' . N oubliez pas de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
-# @messageType.save!
+# Message 1
+@messageType = MessageType.new
+@messageType.message_type = "Day before"
+@messageType.day = 1
+@messageType.content = "'Bonjour! Je suis Ginger, votre majordome en charge de votre expérience que vous avez réservé ce ' + message.experience.date.strftime(\'%A %d %B\') + '. Je vous donne donc rendez-vous demain à 18:30 à ' + message.experience.experience_slices.find_by_order(1).activity.meeting_point + ' . N oubliez pas de charger votre téléphone et de vous équiper en cas de pluie! A très bientôt pour de nouvelles instructions, Ginger.'"
+@messageType.save!
 
 # Message 2
 @messageType = MessageType.new
@@ -199,40 +199,40 @@ puts "Creating message types..."
 @messageType.content = "message.experience.experience_slices.find_by_order(1).activity.teasing1"
 @messageType.save!
 
-# # Message 3
-# @messageType = MessageType.new
-# @messageType.message_type = "Teasing2"
-# @messageType.day = 3
-# @messageType.content = "message.experience.experience_slices.find_by_order(3).activity.teasing2"
-# @messageType.save!
+# Message 3
+@messageType = MessageType.new
+@messageType.message_type = "Teasing2"
+@messageType.day = 3
+@messageType.content = "message.experience.experience_slices.find_by_order(3).activity.teasing2"
+@messageType.save!
 
-# # Message 4
-# @messageType = MessageType.new
-# @messageType.message_type = "Welcome"
-# @messageType.day = 4
-# @messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' + message.experience.experience_slices.find_by_order(1).activity.instruction"
-# @messageType.save!
+# Message 4
+@messageType = MessageType.new
+@messageType.message_type = "Welcome"
+@messageType.day = 4
+@messageType.content = "'Bienvenue! Si Monsieur Dame veulent bien se donner la peine: ' + message.experience.experience_slices.find_by_order(1).activity.instruction"
+@messageType.save!
 
-# # # Message 5
-# @messageType = MessageType.new
-# @messageType.message_type = "End of exp 1"
-# @messageType.day = 5
-# @messageType.content = "'Prêts pour la suite?' + message.experience.experience_slices.find_by_order(2).activity.instruction}'"
-# @messageType.save!
+# # Message 5
+@messageType = MessageType.new
+@messageType.message_type = "End of exp 1"
+@messageType.day = 5
+@messageType.content = "'Prêts pour la suite?' + message.experience.experience_slices.find_by_order(2).activity.instruction}'"
+@messageType.save!
 
-# # # Message 6
-# @messageType = MessageType.new
-# @messageType.message_type = "End of exp 2"
-# @messageType.day = 6
-# @messageType.content = "'Ce n est pas fini!' + message.experience.experience_slices.find_by_order(3).activity.instruction'"
-# @messageType.save!
+# # Message 6
+@messageType = MessageType.new
+@messageType.message_type = "End of exp 2"
+@messageType.day = 6
+@messageType.content = "'Ce n est pas fini!' + message.experience.experience_slices.find_by_order(3).activity.instruction'"
+@messageType.save!
 
-# # Message 7
-# @messageType = MessageType.new
-# @messageType.message_type = "End"
-# @messageType.day = 7
-# @messageType.content = "Votre expérience touche à sa fin! Il est temps pour moi de vous souhaiter une bonne fin d expérience, en souhaitant vous revoir bientôt! Votre majordome, Ginger"
-# @messageType.save!
+# Message 7
+@messageType = MessageType.new
+@messageType.message_type = "End"
+@messageType.day = 7
+@messageType.content = "Votre expérience touche à sa fin! Il est temps pour moi de vous souhaiter une bonne fin d expérience, en souhaitant vous revoir bientôt! Votre majordome, Ginger"
+@messageType.save!
 puts "Done"
 
 # ---------------------------- Create Nathan and his experiences ------------------------------------------------------
