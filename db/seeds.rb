@@ -1,7 +1,7 @@
 require 'csv'
 require 'faker'
 
-CATEGORIES = ['Foodie', 'Sport', 'Artistique', 'Divertissante', 'Fun', 'Relaxante', 'Romantique', 'Concert', 'Nature', 'Culture', 'Dance', 'Cooking class']
+CATEGORIES = ['Foodie', 'Sport', 'Artistique', 'Divertissante', 'Fun', 'Relaxante', 'Romantique', 'Concert', 'Nature', 'Culture']
 CITIES = Experience::CITY
 TIME_SLOTS = ["en aprem", "en soirée"]
 BUDGETS = [150, 200, 250, 300, 350, 400, 450, 500]
