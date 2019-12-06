@@ -15,27 +15,27 @@
 }
 
 .crossfade > figure:nth-child(1) {
-  background-image: asset-url('tango.jpg');
+  background-image: asset-url('bike.jpg');
 }
 
 .crossfade > figure:nth-child(2) {
   animation-delay: 12s;
-  background-image: asset-url('love.png');
+  background-image: asset-url('fire.jpg');
 }
 
 .crossfade > figure:nth-child(3) {
   animation-delay: 24s;
-  background-image: asset-url('fire.jpg');
+  background-image: asset-url('art.png');
 }
 
 .crossfade > figure:nth-child(4) {
   animation-delay: 36s;
-  background-image: asset-url('art.png');
+  background-image: asset-url('love.png');
 }
 
 .crossfade > figure:nth-child(5) {
   animation-delay: 48s;
-  background-image: asset-url('bike.jpg');
+  background-image: asset-url('tango.jpg');
 }
 
 @keyframes
