@@ -65,15 +65,15 @@ puts "Done"
 
 
 puts "Creating users..."
-User.create!(email:"alain.fresco@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0796666666',secondary_number: '0791234567', primary_first_name: "Alain", primary_last_name: "Fresco")
-User.create!(email:"francois.capel@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0797777777',secondary_number: '0790987654', admin: true, primary_first_name: "Francois", primary_last_name: "Capel")
-User.create!(email:"sinan.ucak@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795555555',secondary_number: '0791234567', admin: true, primary_first_name: "Sinan", primary_last_name: "Ucak")
-User.create!(email:"nathan.tempels@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0790000000',secondary_number: '0791234567', admin: true, primary_first_name: "Nathan", primary_last_name: "Tempels")
-User.create!(email:"clara.leroux@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0791111111',secondary_number: '0791234567', primary_first_name: "Clara", primary_last_name: "Le Roux")
-User.create!(email:"thibault.jaime@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0792222222',secondary_number: '0791234567', primary_first_name: "Thibault", primary_last_name: "Jaime")
-User.create!(email:"nicholas.hendrickson@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0793333333',secondary_number: '0791234567', primary_first_name: "Nicholas", primary_last_name: "Hendrickson")
-User.create!(email:"alessandro.bucarelli@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0794444444',secondary_number: '0791234567', primary_first_name: "Alessandro", primary_last_name: "Bucarelli")
-User.create!(email:"cecile.colombo@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0798888888',secondary_number: '0791234567', primary_first_name: "Cecile", primary_last_name: "Colombo")
+User.create!(email:"alain.fresco@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Alain", primary_last_name: "Fresco")
+User.create!(email:"francois.capel@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', admin: true, primary_first_name: "Francois", primary_last_name: "Capel")
+User.create!(email:"sinan.ucak@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', admin: true, primary_first_name: "Sinan", primary_last_name: "Ucak")
+User.create!(email:"nathan.tempels@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', admin: true, primary_first_name: "Nathan", primary_last_name: "Tempels")
+User.create!(email:"clara.leroux@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Clara", primary_last_name: "Le Roux")
+User.create!(email:"thibault.jaime@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Thibault", primary_last_name: "Jaime")
+User.create!(email:"nicholas.hendrickson@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Nicholas", primary_last_name: "Hendrickson")
+User.create!(email:"alessandro.bucarelli@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Alessandro", primary_last_name: "Bucarelli")
+User.create!(email:"cecile.colombo@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Cecile", primary_last_name: "Colombo")
 puts "Done"
 
 puts "Creating experiences..."
