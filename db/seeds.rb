@@ -237,7 +237,7 @@ puts "Done"
 
 # ---------------------------- Create Nathan and his experiences ------------------------------------------------------
 puts "Creating Francois..."
-User.create!(email:"francois.capel@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Francois", primary_last_name: "Capel")
+User.create!(email:"fanch_cap@gmail.com",password:"123456",password_confirmation:"123456", primary_number: '0795360618',secondary_number: '0795360618', primary_first_name: "Francois", primary_last_name: "Capel")
 3.times do
   experience = Experience.new(user: User.last, city: "Lausanne", date: Time.zone.today - Faker::Number.within(range: 10..30).day, time_slot: TIME_SLOTS.sample, budget_cents: BUDGETS.sample, prepared_at: Time.zone.now - Faker::Number.within(range:30..40).day, paid_at: Time.zone.now - Faker::Number.within(range:40..60).day)
   activities = Activity.all.sample(3)
