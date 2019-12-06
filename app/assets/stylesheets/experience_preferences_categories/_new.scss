@@ -59,6 +59,8 @@ a {
   margin-top: 15vh;
   text-align: center;
   color: white;
+  z-index: 2;
+
 }
 
 .container-s .form-check{
@@ -86,7 +88,7 @@ a {
 
 .namerange {
   color: $ginger;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .smallbtn {
@@ -135,5 +137,9 @@ a {
   display: flex;
 }
 
+.form-check-label.collection_check_boxes {
+  font-size: 18px;
+  font-weight: bold;
 
+}
 

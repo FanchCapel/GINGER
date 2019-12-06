@@ -68,7 +68,7 @@
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation:
-    typing 2.5s steps(30, end),
+    typing 2.2s steps(30, end),
     blink-caret .5s step-end infinite;
     animation-fill-mode: forwards;
 }
@@ -78,28 +78,28 @@
 // }
 
 .typewriter p:nth-child(2) {
-  animation-delay: 2s;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 
 }
 .typewriter p:nth-child(3) {
-  animation-delay: 5s;
+  animation-delay: 3.7s;
   animation-fill-mode: forwards;
 }
 .typewriter p:nth-child(4) {
-  animation-delay: 6s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
 }
 .typewriter p:nth-child(5) {
-  animation-delay: 8s;
+  animation-delay: 6.5s;
   animation-fill-mode: forwards;
 }
 .typewriter p:nth-child(6) {
-  animation-delay: 9.5s;
+  animation-delay: 7.8s;
   animation-fill-mode: forwards;
 }
 .typewriter p:nth-child(7) {
-  animation-delay: 11s;
+  animation-delay: 9s;
   animation-fill-mode: forwards;
   margin-top: 10px;
 }
@@ -120,7 +120,7 @@
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation:
-    typing 2.5s steps(30, end),
+    typing 2.2s steps(30, end),
     blink-caret .5s step-end infinite;
     animation-fill-mode: forwards;
 }
@@ -130,28 +130,28 @@
 // }
 
 .typewriter-new p:nth-child(2) {
-  animation-delay: 2s;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 
 }
 .typewriter-new p:nth-child(3) {
-  animation-delay: 5s;
+  animation-delay: 3.2s;
   animation-fill-mode: forwards;
 }
 .typewriter-new p:nth-child(4) {
-  animation-delay: 7.5s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
 }
 .typewriter-new p:nth-child(5) {
-  animation-delay: 10s;
+  animation-delay: 6.8s;
   animation-fill-mode: forwards;
 }
 .typewriter-new p:nth-child(6) {
-  animation-delay: 11.5s;
+  animation-delay: 8s;
   animation-fill-mode: forwards;
 }
 .typewriter-new p:nth-child(7) {
-  animation-delay: 13.5s;
+  animation-delay: 9.3s;
   animation-fill-mode: forwards;
   margin-top: 10px;
 }
